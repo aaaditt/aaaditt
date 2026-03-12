@@ -1,11 +1,9 @@
 <div align="center">
 
-<!-- Animated header banner -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f0c29,50:302b63,100:24243e&height=200&section=header&text=Hey%2C%20I'm%20Aadit%20👋&fontSize=45&fontColor=ffffff&fontAlignY=38&desc=Full-Stack%20Dev%20%7C%20CS%20@%20BITS%20Pilani%20Dubai%20%7C%20Building%20cool%20things&descAlignY=58&descSize=16&animation=fadeIn" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f0c29,50:302b63,100:24243e&height=200&section=header&text=Hey%2C%20I'm%20Aadit%20👋&fontSize=45&fontColor=ffffff&fontAlignY=38&desc=Full-Stack%20Dev%20%26%20UI%2FUX%20%7C%20CS%20@%20BITS%20Pilani%20Dubai%20%7C%20Building%20cool%20things&descAlignY=58&descSize=16&animation=fadeIn" />
 
-<!-- Typing animation -->
 <a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=A78BFA&center=true&vCenter=true&width=600&lines=Full-Stack+Developer+%F0%9F%9A%80;AI+%2F+ML+Enthusiast+%F0%9F%A4%96;UX+%2B+Engineering+%3D+%E2%9D%A4%EF%B8%8F;From+Assembly+to+the+Cloud+%E2%98%81%EF%B8%8F" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=A78BFA&center=true&vCenter=true&width=650&lines=Full-Stack+Developer+%F0%9F%9A%80;UI+%2F+UX+Designer+%F0%9F%8E%A8;AI+%2F+ML+Enthusiast+%F0%9F%A4%96;From+Assembly+to+the+Cloud+%E2%98%81%EF%B8%8F;Build+things+that+feel+as+good+as+they+work." alt="Typing SVG" />
 </a>
 
 <br/>
@@ -19,30 +17,15 @@
 
 ## 🧠 About Me
 
-```ts
-const me = {
-  name:       "Aadit Chandra",
-  location:   "Dubai, UAE 🇦🇪",
-  university: "BITS Pilani, Dubai Campus",
-  major:      "Computer Science",
-  roles:      ["Full-Stack Dev", "IEEE Creative Executive", "PA @ Engineering Graphics"],
-  currentlyBuilding: "Cinematic portfolio website with interactive ribbon grid",
-  currentlyLearning: "UX Design Certification + diving deeper into AI/ML",
-  funFact:    "I've coded in 8086 Assembly AND shipped React apps. The range is real 👀",
-  motto:      "Build things that feel as good as they work.",
-};
-```
+Hey! I'm **Aadit** — a CS student at **BITS Pilani, Dubai** who lives at the intersection of design and engineering. I build things that are fast, functional, and actually nice to look at.
 
----
+I'm into **full-stack development**, **UI/UX design**, and anything that touches **AI/ML**. I've gone from writing 8086 Assembly to shipping React apps — so yeah, the range is real 👀
 
-## 🚀 Current Projects
-
-| Project | Description | Stack |
-|---|---|---|
-| 🚢 **AI Ship Chartering System** | Automates vessel selection workflows using AI — reducing manual effort significantly | AI/ML, Automation |
-| 🏙️ **Urban Services Platform** | Marketplace connecting users to local service providers — improved service speed by 50%+ | Next.js, Node.js, UX |
-| 🤖 **AI Personal Assistant** | Custom tool to manage calendars, emails & tasks via Google Apps Script | Google Cloud, AI |
-| ♟️ **Accessible UI Kit** | Specialized web UI kit built for board-game creators — accessibility-first | UX Design, React |
+- 🎨 **Creative Executive @ IEEE** — shaping the creative direction of our tech community
+- 🏸 **Sports Coordinator** — ran the BITS Sports Festival two years in a row
+- 🤖 Helped organise **NEXUS 2025**, one of the biggest robotics competitions around
+- 🌱 Currently building a **cinematic portfolio** & completing my **UX Design certification**
+- ⚡ Fun fact: I care just as much about how something *looks* as how it *works*
 
 ---
 
@@ -56,13 +39,13 @@ const me = {
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 ![C](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)
-![Verilog](https://img.shields.io/badge/Verilog-FF6F61?style=for-the-badge&logoColor=white)
 
-### 🌐 Frontend
+### 🎨 Frontend & Design
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)
 ![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
 
 ### ⚙️ Backend & Mobile
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
@@ -95,16 +78,6 @@ const me = {
 <div align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=aaaditt&theme=tokyo-night&hide_border=true&bg_color=0d1117" />
 </div>
-
----
-
-## 🎭 Beyond the Code
-
-- 🏸 **Badminton Sports Coordinator** — Ran the BITS Sports Festival (BSF) two years running
-- 🎨 **IEEE Creative Executive** — Leading creative direction & tech community engagement
-- 🤖 **NEXUS 2025** — Helped organise one of the biggest robotics competitions around
-- 🌍 **Climate & Environment** — Interested in tech's role in environmental development
-- 🎮 When I'm not coding, I'm probably designing board games or on the badminton court
 
 ---
 
