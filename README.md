@@ -19,7 +19,7 @@
 
 Hey! I'm **Aadit** — a CS student at **BITS Pilani, Dubai** who lives at the intersection of design and engineering. I build things that are fast, functional, and actually nice to look at.
 
-I'm into **full-stack development**, **UI/UX design**, and anything that touches **AI/ML**. I've gone from writing 8086 Assembly to shipping React apps — so yeah, the range is real 👀
+I'm into **full-stack development**, **UI/UX design**, and anything that touches **AI/ML**. 
 
 - 🌱 Currently building a **cinematic portfolio** & completing my **UX Design certification**
 - ⚡ Fun fact: I care just as much about how something *looks* as how it *works*
