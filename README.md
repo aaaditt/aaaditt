@@ -21,9 +21,6 @@ Hey! I'm **Aadit** — a CS student at **BITS Pilani, Dubai** who lives at the i
 
 I'm into **full-stack development**, **UI/UX design**, and anything that touches **AI/ML**. I've gone from writing 8086 Assembly to shipping React apps — so yeah, the range is real 👀
 
-- 🎨 **Creative Executive @ IEEE** — shaping the creative direction of our tech community
-- 🏸 **Sports Coordinator** — ran the BITS Sports Festival two years in a row
-- 🤖 Helped organise **NEXUS 2025**, one of the biggest robotics competitions around
 - 🌱 Currently building a **cinematic portfolio** & completing my **UX Design certification**
 - ⚡ Fun fact: I care just as much about how something *looks* as how it *works*
 
