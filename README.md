@@ -22,7 +22,7 @@ Hey! I'm **Aadit** — a CS student at **BITS Pilani, Dubai** who lives at the i
 I'm into **full-stack development**, **UI/UX design**, and anything that touches **AI/ML**. 
 
 - 🌱 Currently building a **cinematic portfolio** & completing my **UX Design certification**
--  Give a follow if what i do vibes with you
+-  Give a follow if what i do vibes with you, lessgoo gangg
 
 ---
 
