@@ -23,6 +23,7 @@ I'm into **full-stack development**, **UI/UX design**, and anything that touches
 
 - 🌱 Currently building a **cinematic portfolio** & completing my **UX Design certification**
 -  Give a follow if what i do vibes with you, lessgoo gangg, im just cool like that
+-  THE PROFILE IS CURRENTLY BEING UPDATEDDDD HOPE TO BE DONE SOON
 
 ---
 
