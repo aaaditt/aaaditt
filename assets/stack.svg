@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="1000" height="400" role="img" aria-label="Tech stack">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#0c0c10"/><stop offset="1" stop-color="#08080a"/>
+  </linearGradient>
+  <linearGradient id="scanl" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#ff5a1f" stop-opacity="0"/>
+    <stop offset="0.5" stop-color="#ff5a1f" stop-opacity="0.55"/>
+    <stop offset="1" stop-color="#ff5a1f" stop-opacity="0"/>
+  </linearGradient>
+  <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+    <circle cx="1" cy="1" r="1" fill="#f2ede4" fill-opacity="0.05"/>
+  </pattern>
+  <style>
+    .mono{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace}
+    .lbl{fill:#8d8a93} .pt{fill:#ded8ce} .amber{fill:#ff5a1f} .dim{fill:#6f6c76}
+    .pill,.rw,.hd{opacity:0;animation:in .55s cubic-bezier(.16,.9,.2,1) both}
+    @keyframes in{0%{opacity:0;transform:translateY(9px)}100%{opacity:1;transform:translateY(0)}}
+    .hd{animation-delay:.05s}
+    .p1{animation-delay:0.30s}.p2{animation-delay:0.35s}.p3{animation-delay:0.41s}.p4{animation-delay:0.46s}.p5{animation-delay:0.52s}.p6{animation-delay:0.57s}.p7{animation-delay:0.43s}.p8{animation-delay:0.48s}.p9{animation-delay:0.54s}.p10{animation-delay:0.59s}.p11{animation-delay:0.65s}.p12{animation-delay:0.71s}.p13{animation-delay:0.56s}.p14{animation-delay:0.62s}.p15{animation-delay:0.67s}.p16{animation-delay:0.73s}.p17{animation-delay:0.78s}.p18{animation-delay:0.69s}.p19{animation-delay:0.74s}.p20{animation-delay:0.80s}.p21{animation-delay:0.85s}.p22{animation-delay:0.91s}.p23{animation-delay:0.96s}
+    .scan{animation:scan 7s cubic-bezier(.4,0,.3,1) 1.1s infinite}
+    @keyframes scan{0%{transform:translateY(-30px);opacity:0}4%{opacity:1}
+      26%{transform:translateY(370px);opacity:1}30%{opacity:0}100%{transform:translateY(370px);opacity:0}}
+    .cur{fill:#ff5a1f;animation:bl 1s steps(1,end) infinite}
+    @keyframes bl{0%,50%{opacity:1}50.01%,100%{opacity:.12}}
+    @media (prefers-reduced-motion: reduce){
+      .pill,.rw,.hd{animation:none!important;opacity:1}
+      .scan{display:none} .cur{animation:none}
+    }
+  </style>
+</defs>
+<rect width="1000" height="400" rx="16" fill="url(#bg)"/>
+<rect width="1000" height="400" rx="16" fill="url(#dots)"/>
+<rect x="0.5" y="0.5" width="999" height="399" rx="16" fill="none" stroke="#22222a"/>
+
+<g class="hd">
+  <text class="mono amber" x="40" y="52" font-size="13" letter-spacing="5">THE STACK</text>
+  <text class="mono dim" x="960" y="52" font-size="12" text-anchor="end">23 modules loaded</text>
+  <rect x="40" y="70" width="920" height="1" fill="#22222a"/>
+</g>
+
+<g class="scan"><rect x="40" y="80" width="920" height="2" fill="url(#scanl)"/></g>
+
+<g class="rw" style="animation-delay:0.15s">
+<rect x="40" y="105" width="3" height="16" fill="#ff5a1f" opacity=".85"/>
+<text class="mono lbl" x="54" y="119" font-size="12" letter-spacing="1.6">LANGUAGES</text>
+</g>
+<g class="pill p1"><rect x="232" y="96" width="134" height="34" rx="9" fill="#15151a" stroke="#2b2b34"/><circle cx="247" cy="113" r="4" fill="#F7DF1E"/><text class="mono pt" x="259" y="118" font-size="15">JavaScript</text></g>
+<g class="pill p2"><rect x="376" y="96" width="134" height="34" rx="9" fill="#15151a" stroke="#2b2b34"/><circle cx="391" cy="113" r="4" fill="#3178C6"/><text class="mono pt" x="403" y="118" font-size="15">TypeScript</text></g>
+<g class="pill p3"><rect x="520" y="96" width="98" height="34" rx="9" fill="#15151a" stroke="#2b2b34"/><circle cx="535" cy="113" r="4" fill="#4B8BBE"/><text class="mono pt" x="547" y="118" font-size="15">Python</text></g>
+<g class="pill p4"><rect x="628" y="96" width="80" height="34" rx="9" fill="#15151a" stroke="#2b2b34"/><circle cx="643" cy="113" r="4" fill="#ED8B00"/><text class="mono pt" x="655" y="118" font-size="15">Java</text></g>
+<g class="pill p5"><rect x="718" y="96" width="53" height="34" rx="9" fill="#15151a" stroke="#2b2b34"/><circle cx="733" cy="113" r="4" fill="#659AD2"/><text class="mono pt" x="745" y="118" font-size="15">C</text></g>
+<g class="pill p6"><rect x="781" y="96" width="71" height="34" rx="9" fill="#15151a" stroke="#2b2b34"/><circle cx="796" cy="113" r="4" fill="#7B7BE8"/><text class="mono pt" x="808" y="118" font-size="15">Lua</text></g>
+<g class="rw" style="animation-delay:0.28s">
+<rect x="40" y="167" width="3" height="16" fill="#ff5a1f" opacity=".85"/>
+<text class="mono lbl" x="54" y="181" font-size="12" letter-spacing="1.6">FRONTEND</text>
+</g>
+<g class="pill p7"><rect x="232" y="158" width="89" height="34" rx="9" fill="#15151a" stroke="#2b2b34"/><circle cx="247" cy="175" r="4" fill="#61DAFB"/><text class="mono pt" x="259" y="180" font-size="15">React</text></g>
+<g class="pill p8"><rect x="331" y="158" width="107" height="34" rx="9" fill="#15151a" stroke="#2b2b34"/><circle cx="346" cy="175" r="4" fill="#E8E8E8"/><text class="mono pt" x="358" y="180" font-size="15">Next.js</text></g>
+<g class="pill p9"><rect x="448" y="158" width="161" height="34" rx="9" fill="#15151a" stroke="#2b2b34"/><circle cx="463" cy="175" r="4" fill="#7A8CFF"/><text class="mono pt" x="475" y="180" font-size="15">Framer Motion</text></g>
+<g class="pill p10"><rect x="619" y="158" width="80" height="34" rx="9" fill="#15151a" stroke="#2b2b34"/><circle cx="634" cy="175" r="4" fill="#A259FF"/><text class="mono pt" x="646" y="180" font-size="15">Vite</text></g>
+<g class="pill p11"><rect x="709" y="158" width="116" height="34" rx="9" fill="#15151a" stroke="#2b2b34"/><circle cx="724" cy="175" r="4" fill="#38BDF8"/><text class="mono pt" x="736" y="180" font-size="15">Tailwind</text></g>
+<g class="pill p12"><rect x="835" y="158" width="89" height="34" rx="9" fill="#15151a" stroke="#2b2b34"/><circle cx="850" cy="175" r="4" fill="#F24E1E"/><text class="mono pt" x="862" y="180" font-size="15">Figma</text></g>
+<g class="rw" style="animation-delay:0.41s">
+<rect x="40" y="229" width="3" height="16" fill="#ff5a1f" opacity=".85"/>
+<text class="mono lbl" x="54" y="243" font-size="12" letter-spacing="1.6">BACKEND</text>
+</g>
+<g class="pill p13"><rect x="232" y="220" width="107" height="34" rx="9" fill="#15151a" stroke="#2b2b34"/><circle cx="247" cy="237" r="4" fill="#6CC24A"/><text class="mono pt" x="259" y="242" font-size="15">Node.js</text></g>
+<g class="pill p14"><rect x="349" y="220" width="107" height="34" rx="9" fill="#15151a" stroke="#2b2b34"/><circle cx="364" cy="237" r="4" fill="#B5B5B5"/><text class="mono pt" x="376" y="242" font-size="15">Express</text></g>
+<g class="pill p15"><rect x="466" y="220" width="152" height="34" rx="9" fill="#15151a" stroke="#2b2b34"/><circle cx="481" cy="237" r="4" fill="#61DAFB"/><text class="mono pt" x="493" y="242" font-size="15">React Native</text></g>
+<g class="pill p16"><rect x="628" y="220" width="107" height="34" rx="9" fill="#15151a" stroke="#2b2b34"/><circle cx="643" cy="237" r="4" fill="#47C5FB"/><text class="mono pt" x="655" y="242" font-size="15">Flutter</text></g>
+<g class="pill p17"><rect x="745" y="220" width="80" height="34" rx="9" fill="#15151a" stroke="#2b2b34"/><circle cx="760" cy="237" r="4" fill="#9B59B6"/><text class="mono pt" x="772" y="242" font-size="15">Odoo</text></g>
+<g class="rw" style="animation-delay:0.54s">
+<rect x="40" y="291" width="3" height="16" fill="#ff5a1f" opacity=".85"/>
+<text class="mono lbl" x="54" y="305" font-size="12" letter-spacing="1.6">DATA / CLOUD</text>
+</g>
+<g class="pill p18"><rect x="232" y="282" width="134" height="34" rx="9" fill="#15151a" stroke="#2b2b34"/><circle cx="247" cy="299" r="4" fill="#5B8FD1"/><text class="mono pt" x="259" y="304" font-size="15">PostgreSQL</text></g>
+<g class="pill p19"><rect x="376" y="282" width="107" height="34" rx="9" fill="#15151a" stroke="#2b2b34"/><circle cx="391" cy="299" r="4" fill="#47A248"/><text class="mono pt" x="403" y="304" font-size="15">MongoDB</text></g>
+<g class="pill p20"><rect x="493" y="282" width="71" height="34" rx="9" fill="#15151a" stroke="#2b2b34"/><circle cx="508" cy="299" r="4" fill="#FF9900"/><text class="mono pt" x="520" y="304" font-size="15">AWS</text></g>
+<g class="pill p21"><rect x="574" y="282" width="98" height="34" rx="9" fill="#15151a" stroke="#2b2b34"/><circle cx="589" cy="299" r="4" fill="#2496ED"/><text class="mono pt" x="601" y="304" font-size="15">Docker</text></g>
+<g class="pill p22"><rect x="682" y="282" width="71" height="34" rx="9" fill="#15151a" stroke="#2b2b34"/><circle cx="697" cy="299" r="4" fill="#4285F4"/><text class="mono pt" x="709" y="304" font-size="15">GCP</text></g>
+<g class="pill p23"><rect x="763" y="282" width="98" height="34" rx="9" fill="#15151a" stroke="#2b2b34"/><circle cx="778" cy="299" r="4" fill="#FFFFFF"/><text class="mono pt" x="790" y="304" font-size="15">Vercel</text></g>
+
+<rect x="40" y="344" width="920" height="1" fill="#22222a"/>
+<text class="mono dim" x="40" y="372" font-size="13">$ still learning &#8212; ask me in six months</text>
+<rect class="cur" x="346" y="360" width="9" height="16"/>
+</svg>
