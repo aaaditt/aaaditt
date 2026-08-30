@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 200" width="480" height="200" role="img" aria-label="Blueprint Generator — Turns reference photos into detailed Minecraft builds — 3D preview, block-level editing, Litematica export.">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0c0c10"/><stop offset="1" stop-color="#08080a"/></linearGradient>
+  <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#f2ede4" fill-opacity="0.05"/></pattern>
+  <style>
+    .mono{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace}
+    .bone{fill:#f2ede4}.amber{fill:#ff5a1f}.dim{fill:#8d8a93}.body{fill:#a9a5ae}
+    .up{opacity:0;animation:up .5s cubic-bezier(.16,.9,.2,1) both}
+    @keyframes up{0%{opacity:0;transform:translateY(8px)}100%{opacity:1;transform:translateY(0)}}
+    .t1{animation-delay:.06s}.t2{animation-delay:.14s}.t3{animation-delay:.22s}
+    .chip{opacity:0;animation:up .45s cubic-bezier(.16,.9,.2,1) both}
+    .gd{opacity:0;animation:gd .5s ease-out both}
+    @keyframes gd{to{opacity:1}}
+    .ul{transform-box:fill-box;transform-origin:left;animation:ul .6s cubic-bezier(.16,.9,.2,1) .3s both}
+    @keyframes ul{0%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+    @media (prefers-reduced-motion: reduce){
+      .up,.chip,.gd,.ul{animation:none!important;opacity:1;transform:none}
+    }
+  </style>
+</defs>
+<rect width="480" height="200" rx="14" fill="url(#bg)"/><rect width="480" height="200" rx="14" fill="url(#dots)"/><rect x="0.5" y="0.5" width="479" height="199" rx="14" fill="none" stroke="#22222a"/>
+<rect x="416" y="30" width="4.4" height="4.4" rx="1.1" fill="#ff5a1f" opacity="0.58" class="gd" style="animation-delay:0.50s"/><rect x="434" y="30" width="4.4" height="4.4" rx="1.1" fill="#ff5a1f" opacity="0.72" class="gd" style="animation-delay:0.53s"/><rect x="443" y="30" width="4.4" height="4.4" rx="1.1" fill="#ff5a1f" opacity="0.72" class="gd" style="animation-delay:0.54s"/><rect x="452" y="30" width="4.4" height="4.4" rx="1.1" fill="#ff5a1f" opacity="0.72" class="gd" style="animation-delay:0.56s"/><rect x="416" y="39" width="4.4" height="4.4" rx="1.1" fill="#ff5a1f" opacity="0.43" class="gd" style="animation-delay:0.57s"/><rect x="425" y="39" width="4.4" height="4.4" rx="1.1" fill="#ff5a1f" opacity="0.29" class="gd" style="animation-delay:0.58s"/><rect x="434" y="48" width="4.4" height="4.4" rx="1.1" fill="#ff5a1f" opacity="0.58" class="gd" style="animation-delay:0.67s"/><rect x="452" y="48" width="4.4" height="4.4" rx="1.1" fill="#ff5a1f" opacity="0.43" class="gd" style="animation-delay:0.70s"/><rect x="416" y="57" width="4.4" height="4.4" rx="1.1" fill="#ff5a1f" opacity="0.29" class="gd" style="animation-delay:0.71s"/><rect x="452" y="57" width="4.4" height="4.4" rx="1.1" fill="#ff5a1f" opacity="0.72" class="gd" style="animation-delay:0.77s"/><rect x="416" y="66" width="4.4" height="4.4" rx="1.1" fill="#ff5a1f" opacity="0.43" class="gd" style="animation-delay:0.78s"/><rect x="425" y="66" width="4.4" height="4.4" rx="1.1" fill="#ff5a1f" opacity="0.58" class="gd" style="animation-delay:0.79s"/><rect x="443" y="66" width="4.4" height="4.4" rx="1.1" fill="#ff5a1f" opacity="0.72" class="gd" style="animation-delay:0.82s"/><rect x="452" y="66" width="4.4" height="4.4" rx="1.1" fill="#ff5a1f" opacity="0.58" class="gd" style="animation-delay:0.84s"/>
+<g class="up t1"><text class="mono amber" x="24" y="46" font-size="10" letter-spacing="3">03</text></g>
+<g class="up t2"><text class="mono bone" x="24" y="78" font-size="18">Blueprint Generator</text></g>
+<rect class="ul" x="24" y="88" width="46" height="2" fill="#ff5a1f"/>
+<g class="up t3"><text class="mono body" x="24" y="112" font-size="12.5">Turns reference photos into detailed Minecraft builds —</text><text class="mono body" x="24" y="131" font-size="12.5">3D preview, block-level editing, Litematica export.</text></g>
+<g class="chip" style="animation-delay:0.42s"><rect x="24" y="164" width="66" height="22" rx="7" fill="#15151a" stroke="#2b2b34"/><text class="mono dim" x="34" y="179" font-size="11">Next.js</text></g><g class="chip" style="animation-delay:0.48s"><rect x="97" y="164" width="73" height="22" rx="7" fill="#15151a" stroke="#2b2b34"/><text class="mono dim" x="107" y="179" font-size="11">Three.js</text></g><g class="chip" style="animation-delay:0.54s"><rect x="177" y="164" width="86" height="22" rx="7" fill="#15151a" stroke="#2b2b34"/><text class="mono dim" x="187" y="179" font-size="11">Claude API</text></g>
+
+</svg>
