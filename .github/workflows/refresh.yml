@@ -1,0 +1,51 @@
+name: refresh profile
+
+on:
+  schedule:
+    - cron: "17 */12 * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "scripts/**"
+      - "data/**"
+      - ".github/workflows/refresh.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    env:
+      # PROFILE_TOKEN is optional — only needed if the built-in token can't read
+      # contribution data. Falls back to the default GITHUB_TOKEN.
+      GITHUB_TOKEN: ${{ secrets.PROFILE_TOKEN || secrets.GITHUB_TOKEN }}
+      GH_LOGIN: ${{ github.repository_owner }}
+      TZ_OFFSET: "4"
+      TZ_LABEL: "gulf standard time"
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Project cards and contact chips
+        run: node scripts/build-cards.mjs
+
+      - name: Commit rhythm and activity
+        run: node scripts/build-pulse.mjs --out=assets/pulse.svg
+
+      - name: Stats card
+        run: node scripts/build-stats.mjs --out=assets/stats.svg
+
+      - name: Commit whatever changed
+        if: always()
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets
+          git diff --quiet --staged || git commit -m "chore: refresh profile"
+          git push
