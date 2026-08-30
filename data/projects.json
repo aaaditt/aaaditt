@@ -1,0 +1,29 @@
+{
+  "owner": "aaaditt",
+  "contact": [
+    { "label": "LINKEDIN", "url": "https://linkedin.com/in/aadit-chandra" },
+    { "label": "EMAIL",    "url": "mailto:work.aadit@gmail.com" },
+    { "label": "ORCID",    "url": "https://orcid.org/0009-0006-9429-1479" }
+  ],
+  "projects": [
+    { "repo": "video-editor", "name": "demotape",
+      "blurb": "You describe the flow. Playwright performs it against your real app, records it, captions it, and posts the demo straight to the PR.",
+      "stack": ["TypeScript", "Playwright", "FFmpeg"] },
+    { "repo": "3d-editor", "name": "Jacket Studio",
+      "blurb": "Design flat panels with Photoshop-style tools, watch them wrap onto a rotatable 3D garment, export print-ready artwork.",
+      "stack": ["TypeScript", "Three.js", "Canvas"] },
+    { "repo": "minecraft-schematic-maker", "name": "Blueprint Generator",
+      "blurb": "Turns reference photos into detailed Minecraft builds — 3D preview, block-level editing, Litematica export.",
+      "stack": ["Next.js", "Three.js", "Claude API"] },
+    { "repo": "caspr", "name": "caspr",
+      "blurb": "Hold a key, speak, release. Polished text lands at your cursor in any Windows app. Local Whisper, so audio never leaves the machine.",
+      "stack": ["Python", "Whisper", "Groq"] },
+    { "repo": "AeroVertex", "name": "AeroVertex",
+      "blurb": "Airport ground-operations system with a live top-down simulation — 24 hours of activity compressed into 30 interactive minutes.",
+      "stack": ["JavaScript", "SQL", "Simulation"] },
+    { "repo": "georgia-trip", "name": "Georgia Trip Planner",
+      "url": "https://trip-self-six.vercel.app",
+      "blurb": "Collaborative itinerary builder — vote, rate and argue over 38 experiences across 7 regions until the trip plans itself.",
+      "stack": ["React", "Vite", "Vercel"] }
+  ]
+}
