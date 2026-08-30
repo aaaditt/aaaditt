@@ -49,9 +49,11 @@
   <clipPath id="tcB"><rect x="1027" y="421" width="8" height="20"/></clipPath>
   <clipPath id="tcA"><rect x="1035" y="421" width="8" height="20"/></clipPath>
 
-  <clipPath id="c1"><rect class="clip r1" x="360" y="334" width="495" height="34"/></clipPath>
-  <clipPath id="c2"><rect class="clip r2" x="336" y="334" width="543" height="34"/></clipPath>
-  <clipPath id="c3"><rect class="clip r3" x="360" y="334" width="495" height="34"/></clipPath>
+  <clipPath id="c0"><rect class="clip r0" x="360.0" y="334" width="495" height="34"/></clipPath>
+  <clipPath id="c1"><rect class="clip r1" x="336.0" y="334" width="543" height="34"/></clipPath>
+  <clipPath id="c2"><rect class="clip r2" x="336.0" y="334" width="543" height="34"/></clipPath>
+  <clipPath id="c3"><rect class="clip r3" x="354.0" y="334" width="507" height="34"/></clipPath>
+  <clipPath id="c4"><rect class="clip r4" x="360.0" y="334" width="495" height="34"/></clipPath>
 
   <style>
     .mono{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace}
@@ -85,24 +87,32 @@
 
     .clip{transform-box:fill-box;transform-origin:left center}
     .line{opacity:0}
-    .l-1{animation:slot 11.4s linear 2.35s infinite}
-    .l-2{animation:slot 11.4s linear 6.15s infinite}
-    .l-3{animation:slot 11.4s linear 9.95s infinite}
-    @keyframes slot{0%{opacity:1}27.2%{opacity:1}29.6%{opacity:0}100%{opacity:0}}
-
-    .r1{animation:ty1 11.4s steps(40,end) 2.35s infinite}
-    .r2{animation:ty2 11.4s steps(44,end) 6.15s infinite}
-    .r3{animation:ty3 11.4s steps(40,end) 9.95s infinite}
-    @keyframes ty1{0%{transform:scaleX(0)}11%{transform:scaleX(1)}100%{transform:scaleX(1)}}
-    @keyframes ty2{0%{transform:scaleX(0)}12%{transform:scaleX(1)}100%{transform:scaleX(1)}}
-    @keyframes ty3{0%{transform:scaleX(0)}11%{transform:scaleX(1)}100%{transform:scaleX(1)}}
-
-    .cg1{animation:cur1 11.4s steps(40,end) 2.35s infinite}
-    .cg2{animation:cur2 11.4s steps(44,end) 6.15s infinite}
-    .cg3{animation:cur3 11.4s steps(40,end) 9.95s infinite}
-    @keyframes cur1{0%{transform:translateX(0)}11%{transform:translateX(480px)}100%{transform:translateX(480px)}}
-    @keyframes cur2{0%{transform:translateX(0)}12%{transform:translateX(528px)}100%{transform:translateX(528px)}}
-    @keyframes cur3{0%{transform:translateX(0)}11%{transform:translateX(480px)}100%{transform:translateX(480px)}}
+    .ln0{animation:slot 18.0s linear 2.35s infinite}
+    .r0{animation:ty0 18.0s steps(40,end) 2.35s infinite}
+    .cg0{animation:cur0 18.0s steps(40,end) 2.35s infinite}
+    @keyframes ty0{0%{transform:scaleX(0)}6.39%{transform:scaleX(1)}100%{transform:scaleX(1)}}
+    @keyframes cur0{0%{transform:translateX(0)}6.39%{transform:translateX(480px)}100%{transform:translateX(480px)}}
+    .ln1{animation:slot 18.0s linear 5.95s infinite}
+    .r1{animation:ty1 18.0s steps(44,end) 5.95s infinite}
+    .cg1{animation:cur1 18.0s steps(44,end) 5.95s infinite}
+    @keyframes ty1{0%{transform:scaleX(0)}6.39%{transform:scaleX(1)}100%{transform:scaleX(1)}}
+    @keyframes cur1{0%{transform:translateX(0)}6.39%{transform:translateX(528px)}100%{transform:translateX(528px)}}
+    .ln2{animation:slot 18.0s linear 9.55s infinite}
+    .r2{animation:ty2 18.0s steps(44,end) 9.55s infinite}
+    .cg2{animation:cur2 18.0s steps(44,end) 9.55s infinite}
+    @keyframes ty2{0%{transform:scaleX(0)}6.39%{transform:scaleX(1)}100%{transform:scaleX(1)}}
+    @keyframes cur2{0%{transform:translateX(0)}6.39%{transform:translateX(528px)}100%{transform:translateX(528px)}}
+    .ln3{animation:slot 18.0s linear 13.15s infinite}
+    .r3{animation:ty3 18.0s steps(41,end) 13.15s infinite}
+    .cg3{animation:cur3 18.0s steps(41,end) 13.15s infinite}
+    @keyframes ty3{0%{transform:scaleX(0)}6.39%{transform:scaleX(1)}100%{transform:scaleX(1)}}
+    @keyframes cur3{0%{transform:translateX(0)}6.39%{transform:translateX(492px)}100%{transform:translateX(492px)}}
+    .ln4{animation:slot 18.0s linear 16.75s infinite}
+    .r4{animation:ty4 18.0s steps(40,end) 16.75s infinite}
+    .cg4{animation:cur4 18.0s steps(40,end) 16.75s infinite}
+    @keyframes ty4{0%{transform:scaleX(0)}6.39%{transform:scaleX(1)}100%{transform:scaleX(1)}}
+    @keyframes cur4{0%{transform:translateX(0)}6.39%{transform:translateX(480px)}100%{transform:translateX(480px)}}
+    @keyframes slot{0%{opacity:1}16.94%{opacity:1}18.61%{opacity:0}100%{opacity:0}}
     .curbar{fill:#ff5a1f;animation:blink 1s steps(1,end) infinite}
     @keyframes blink{0%,50%{opacity:1}50.01%,100%{opacity:.15}}
 
@@ -116,10 +126,10 @@
     @keyframes flick{0%{opacity:.055}100%{opacity:.085}}
 
     @media (prefers-reduced-motion: reduce){
-      .wm path,.lbT,.lbB,.rule,.fadeup,.line,.clip,.cg1,.cg2,.cg3,.swp,.grain,.digA,.digB,.rec,.curbar,.nameglow{animation:none!important}
+      .wm path,.lbT,.lbB,.rule,.fadeup,.line,.clip,.cg0,.cg1,.cg2,.cg3,.cg4,.swp,.grain,.digA,.digB,.rec,.curbar,.nameglow{animation:none!important}
       .wm path{stroke-dashoffset:0}
-      .line{opacity:0}.l-1{opacity:1}
-      .cg1{transform:translateX(480px)}
+      .line{opacity:0}.ln0{opacity:1}
+      .cg0{transform:translateX(480px)}
       .swp{opacity:0}
     }
   </style>
@@ -136,7 +146,7 @@
 </g>
 
 <g class="fadeup d1">
-  <text class="mono amber" x="600" y="128" font-size="12" letter-spacing="6.5" text-anchor="middle">BITS PILANI DUBAI</text>
+  <text class="mono amber" x="600" y="128" font-size="12" letter-spacing="6.5" text-anchor="middle">DESIGN &#215; ENGINEERING</text>
 </g>
 
 <g class="nameglow">
@@ -148,17 +158,25 @@
 
 <rect class="rule" x="490" y="308" width="220" height="2" fill="#ff5a1f"/>
 
-<g class="line l-1">
-  <g clip-path="url(#c1)"><text class="mono bone" x="360" y="356" font-size="20">full-stack dev &#183; ui/ux &#183; design-obsessed</text></g>
-  <g class="cg1"><rect class="curbar" x="360" y="338" width="11" height="23"/></g>
+<g class="line ln0">
+  <g clip-path="url(#c0)"><text class="mono bone" x="360.0" y="356" font-size="20">full-stack dev · ui/ux · design-obsessed</text></g>
+  <g class="cg0"><rect class="curbar" x="360.0" y="338" width="11" height="23"/></g>
 </g>
-<g class="line l-2">
-  <g clip-path="url(#c2)"><text class="mono bone" x="336" y="356" font-size="20">i make things that feel as good as they work</text></g>
-  <g class="cg2"><rect class="curbar" x="336" y="338" width="11" height="23"/></g>
+<g class="line ln1">
+  <g clip-path="url(#c1)"><text class="mono bone" x="336.0" y="356" font-size="20">i make things that feel as good as they work</text></g>
+  <g class="cg1"><rect class="curbar" x="336.0" y="338" width="11" height="23"/></g>
 </g>
-<g class="line l-3">
-  <g clip-path="url(#c3)"><text class="mono bone" x="360" y="356" font-size="20">currently building a cinematic portfolio</text></g>
-  <g class="cg3"><rect class="curbar" x="360" y="338" width="11" height="23"/></g>
+<g class="line ln2">
+  <g clip-path="url(#c2)"><text class="mono bone" x="336.0" y="356" font-size="20">if it doesn't exist yet, that's just a to-do</text></g>
+  <g class="cg2"><rect class="curbar" x="336.0" y="338" width="11" height="23"/></g>
+</g>
+<g class="line ln3">
+  <g clip-path="url(#c3)"><text class="mono bone" x="354.0" y="356" font-size="20">the last ten percent is the whole product</text></g>
+  <g class="cg3"><rect class="curbar" x="354.0" y="338" width="11" height="23"/></g>
+</g>
+<g class="line ln4">
+  <g clip-path="url(#c4)"><text class="mono bone" x="360.0" y="356" font-size="20">currently building a cinematic portfolio</text></g>
+  <g class="cg4"><rect class="curbar" x="360.0" y="338" width="11" height="23"/></g>
 </g>
 
 <rect class="grain" width="1200" height="460" filter="url(#grain)" opacity=".07" style="mix-blend-mode:overlay"/>
