@@ -14,7 +14,7 @@
 
 ### `01` &nbsp;ABOUT
 
-CS student at **BITS Pilani, Dubai**. Most of what I build starts the same way — I want something to exist, it doesn't, so I make it.
+CS student at **BITS, Dubai**. Most of what I build starts the same way — I want something to exist, it doesn't, so I make it.
 
 That's how I ended up with a dictation tool that types for me, a design studio for club jackets, and a thing that turns photographs into Minecraft blueprints. The through-line is design. I care about how software *feels*, not just whether it runs.
 
