@@ -1,0 +1,48 @@
+{
+  "note": "$ still learning — ask me in six months",
+  "groups": [
+    {
+      "label": "LANGUAGES",
+      "items": [
+        { "name": "JavaScript", "color": "#F7DF1E" },
+        { "name": "TypeScript", "color": "#3178C6" },
+        { "name": "Python",     "color": "#4B8BBE" },
+        { "name": "Java",       "color": "#ED8B00" },
+        { "name": "C",          "color": "#659AD2" },
+        { "name": "Lua",        "color": "#7B7BE8" }
+      ]
+    },
+    {
+      "label": "FRONTEND",
+      "items": [
+        { "name": "React",         "color": "#61DAFB" },
+        { "name": "Next.js",       "color": "#E8E8E8" },
+        { "name": "Framer Motion", "color": "#7A8CFF" },
+        { "name": "Vite",          "color": "#A259FF" },
+        { "name": "Tailwind",      "color": "#38BDF8" },
+        { "name": "Figma",         "color": "#F24E1E" }
+      ]
+    },
+    {
+      "label": "BACKEND",
+      "items": [
+        { "name": "Node.js",      "color": "#6CC24A" },
+        { "name": "Express",      "color": "#B5B5B5" },
+        { "name": "React Native", "color": "#61DAFB" },
+        { "name": "Flutter",      "color": "#47C5FB" },
+        { "name": "Odoo",         "color": "#9B59B6" }
+      ]
+    },
+    {
+      "label": "DATA / CLOUD",
+      "items": [
+        { "name": "PostgreSQL", "color": "#5B8FD1" },
+        { "name": "MongoDB",    "color": "#47A248" },
+        { "name": "AWS",        "color": "#FF9900" },
+        { "name": "Docker",     "color": "#2496ED" },
+        { "name": "GCP",        "color": "#4285F4" },
+        { "name": "Vercel",     "color": "#FFFFFF" }
+      ]
+    }
+  ]
+}

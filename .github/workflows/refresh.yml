@@ -10,6 +10,7 @@ on:
     paths:
       - "scripts/**"
       - "data/**"
+      - "assets/demos/**"
       - ".github/workflows/refresh.yml"
 
 permissions:
@@ -32,6 +33,12 @@ jobs:
         with:
           node-version: "20"
 
+      - name: Hero and divider
+        run: node scripts/build-chrome.mjs
+
+      - name: Tech stack
+        run: node scripts/build-stack.mjs
+
       - name: Project cards and contact chips
         run: node scripts/build-cards.mjs
 
@@ -41,11 +48,17 @@ jobs:
       - name: Stats card
         run: node scripts/build-stats.mjs --out=assets/stats.svg
 
+      - name: The reel — a year of commits as film
+        run: node scripts/build-reel.mjs --out=assets/reel.svg
+
+      - name: Sync the README to what's on disk
+        run: node scripts/build-readme.mjs
+
       - name: Commit whatever changed
         if: always()
         run: |
-          git config user.name  "github-actions[bot]"
+          git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets
+          git add assets README.md
           git diff --quiet --staged || git commit -m "chore: refresh profile"
           git push

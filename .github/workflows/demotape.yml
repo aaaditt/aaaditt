@@ -1,0 +1,99 @@
+name: record a demo
+
+# Points demotape at one of my own projects, records the flow, and commits the
+# resulting clip here as assets/demos/<project>.gif. The next profile refresh
+# picks it up and puts it above that project's card — no README edit needed.
+#
+# Run it from the Actions tab. The defaults below match a typical Vite/Next app;
+# override start_command / port for anything that boots differently.
+
+on:
+  workflow_dispatch:
+    inputs:
+      project:
+        description: "Repo to record (must be one of the repos in data/projects.json)"
+        required: true
+        type: string
+      demo_file:
+        description: "Demo script inside that repo, e.g. demos/onboarding.demo.ts"
+        required: true
+        type: string
+      start_command:
+        description: "How to boot the app before recording"
+        required: false
+        default: "npm run dev"
+        type: string
+      port:
+        description: "Port the app serves on"
+        required: false
+        default: "3000"
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  record:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out this profile
+        uses: actions/checkout@v4
+
+      - name: Check out the project being recorded
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository_owner }}/${{ inputs.project }}
+          path: app
+
+      - name: Check out demotape
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository_owner }}/video-editor
+          path: demotape
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Install and boot the app
+        working-directory: app
+        run: |
+          npm ci || npm install
+          nohup ${{ inputs.start_command }} > ../app.log 2>&1 &
+          npx --yes wait-on -t 120000 http://localhost:${{ inputs.port }}
+
+      - name: Install demotape
+        working-directory: demotape/remotion
+        run: |
+          npm ci || npm install
+          npx --yes playwright install --with-deps chromium
+
+      - name: Roll
+        working-directory: demotape/remotion
+        run: |
+          npm run demo -- "../../app/${{ inputs.demo_file }}" \
+            --headless --url "http://localhost:${{ inputs.port }}"
+
+      - name: Keep the clip
+        run: |
+          mkdir -p assets/demos
+          clip="$(find demotape -name '*.gif' -newermt '-30 minutes' -printf '%T@ %p\n' \
+                  | sort -rn | head -1 | cut -d' ' -f2-)"
+          if [ -z "$clip" ]; then
+            echo "demotape produced no gif — check the run log above"
+            tail -50 app.log || true
+            exit 1
+          fi
+          cp "$clip" "assets/demos/${{ inputs.project }}.gif"
+          ls -lh "assets/demos/${{ inputs.project }}.gif"
+
+      - name: Commit it
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/demos
+          git diff --quiet --staged || git commit -m "demo: record ${{ inputs.project }}"
+          git push

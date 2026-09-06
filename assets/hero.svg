@@ -1,12 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 460" width="1200" height="460" role="img" aria-label="Aadit - full-stack developer and UI/UX designer, BITS Pilani Dubai">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 460" width="1200" height="460" role="img" aria-label="AADIT — full-stack developer and UI/UX designer, BITS Pilani Dubai">
 <defs>
   <linearGradient id="bgg" x1="0" y1="0" x2="1" y2="1">
     <stop offset="0" stop-color="#0b0b0e"/><stop offset="0.55" stop-color="#101014"/><stop offset="1" stop-color="#08080a"/>
   </linearGradient>
-  <radialGradient id="warm" cx="0.5" cy="0.5" r="0.62">
-    <stop offset="0" stop-color="#ff5a1f" stop-opacity="0.20"/>
-    <stop offset="0.55" stop-color="#ff5a1f" stop-opacity="0.05"/>
-    <stop offset="1" stop-color="#ff5a1f" stop-opacity="0"/>
+  <radialGradient id="wash" cx="0.5" cy="0.5" r="0.62">
+    <stop offset="0" stop-color="#4da3ff" stop-opacity="0.18"/>
+    <stop offset="0.55" stop-color="#4da3ff" stop-opacity="0.05"/>
+    <stop offset="1" stop-color="#4da3ff" stop-opacity="0"/>
   </radialGradient>
   <radialGradient id="fade" cx="0.5" cy="0.5" r="0.5">
     <stop offset="0" stop-color="#fff" stop-opacity="0.85"/>
@@ -40,24 +40,21 @@
     <path pathLength="1" transform="translate(372,0)" d="M20 6V138"/>
     <path pathLength="1" transform="translate(436,0)" d="M8 10H92M50 10V138"/>
   </g>
-
   <mask id="nameMask">
     <g transform="translate(346,150) scale(0.95)" fill="none" stroke="#fff" stroke-width="11.5"
        stroke-linecap="round" stroke-linejoin="round"><use href="#wordmark"/></g>
   </mask>
 
-  <clipPath id="tcB"><rect x="1027" y="421" width="8" height="20"/></clipPath>
-  <clipPath id="tcA"><rect x="1035" y="421" width="8" height="20"/></clipPath>
-
-  <clipPath id="c0"><rect class="clip r0" x="360.0" y="334" width="495" height="34"/></clipPath>
-  <clipPath id="c1"><rect class="clip r1" x="336.0" y="334" width="543" height="34"/></clipPath>
-  <clipPath id="c2"><rect class="clip r2" x="336.0" y="334" width="543" height="34"/></clipPath>
-  <clipPath id="c3"><rect class="clip r3" x="354.0" y="334" width="507" height="34"/></clipPath>
-  <clipPath id="c4"><rect class="clip r4" x="360.0" y="334" width="495" height="34"/></clipPath>
+  <clipPath id="tcF"><rect x="1031" y="421" width="16" height="20"/></clipPath>
+  <clipPath id="c0"><rect class="clip r0" x="360" y="334" width="495" height="34"/></clipPath>
+  <clipPath id="c1"><rect class="clip r1" x="336" y="334" width="543" height="34"/></clipPath>
+  <clipPath id="c2"><rect class="clip r2" x="336" y="334" width="543" height="34"/></clipPath>
+  <clipPath id="c3"><rect class="clip r3" x="354" y="334" width="507" height="34"/></clipPath>
+  <clipPath id="c4"><rect class="clip r4" x="360" y="334" width="495" height="34"/></clipPath>
 
   <style>
     .mono{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace}
-    .bone{fill:#f2ede4}.amber{fill:#ff5a1f}.dim{fill:#8d8a93}
+    .bone{fill:#f2ede4}.accent{fill:#4da3ff}.dim{fill:#8d8a93}
 
     .lb{fill:#000}
     .lbT{transform-box:fill-box;transform-origin:top;animation:lbO 1.15s cubic-bezier(.16,.9,.2,1) both}
@@ -73,7 +70,7 @@
     .wm path:nth-child(4){animation-delay:.84s}
     .wm path:nth-child(5){animation-delay:.97s}
     .nameglow{animation:glowin 1.6s ease-out 1.5s both}
-    @keyframes glowin{0%{filter:drop-shadow(0 0 0 rgba(255,90,31,0))}100%{filter:drop-shadow(0 0 24px rgba(255,90,31,.32))}}
+    @keyframes glowin{0%{filter:drop-shadow(0 0 0 rgba(77,163,255,0))}100%{filter:drop-shadow(0 0 26px rgba(77,163,255,.34))}}
 
     .swp{animation:swp 9.5s cubic-bezier(.35,0,.25,1) 2.1s infinite}
     @keyframes swp{0%{transform:translateX(-300px)}17%{transform:translateX(1300px)}100%{transform:translateX(1300px)}}
@@ -87,56 +84,54 @@
 
     .clip{transform-box:fill-box;transform-origin:left center}
     .line{opacity:0}
-    .ln0{animation:slot 18.0s linear 2.35s infinite}
-    .r0{animation:ty0 18.0s steps(40,end) 2.35s infinite}
-    .cg0{animation:cur0 18.0s steps(40,end) 2.35s infinite}
+    .ln0{animation:slot 18s linear 2.35s infinite}
+    .r0{animation:ty0 18s steps(40,end) 2.35s infinite}
+    .cg0{animation:cur0 18s steps(40,end) 2.35s infinite}
     @keyframes ty0{0%{transform:scaleX(0)}6.39%{transform:scaleX(1)}100%{transform:scaleX(1)}}
     @keyframes cur0{0%{transform:translateX(0)}6.39%{transform:translateX(480px)}100%{transform:translateX(480px)}}
-    .ln1{animation:slot 18.0s linear 5.95s infinite}
-    .r1{animation:ty1 18.0s steps(44,end) 5.95s infinite}
-    .cg1{animation:cur1 18.0s steps(44,end) 5.95s infinite}
+    .ln1{animation:slot 18s linear 5.95s infinite}
+    .r1{animation:ty1 18s steps(44,end) 5.95s infinite}
+    .cg1{animation:cur1 18s steps(44,end) 5.95s infinite}
     @keyframes ty1{0%{transform:scaleX(0)}6.39%{transform:scaleX(1)}100%{transform:scaleX(1)}}
     @keyframes cur1{0%{transform:translateX(0)}6.39%{transform:translateX(528px)}100%{transform:translateX(528px)}}
-    .ln2{animation:slot 18.0s linear 9.55s infinite}
-    .r2{animation:ty2 18.0s steps(44,end) 9.55s infinite}
-    .cg2{animation:cur2 18.0s steps(44,end) 9.55s infinite}
+    .ln2{animation:slot 18s linear 9.55s infinite}
+    .r2{animation:ty2 18s steps(44,end) 9.55s infinite}
+    .cg2{animation:cur2 18s steps(44,end) 9.55s infinite}
     @keyframes ty2{0%{transform:scaleX(0)}6.39%{transform:scaleX(1)}100%{transform:scaleX(1)}}
     @keyframes cur2{0%{transform:translateX(0)}6.39%{transform:translateX(528px)}100%{transform:translateX(528px)}}
-    .ln3{animation:slot 18.0s linear 13.15s infinite}
-    .r3{animation:ty3 18.0s steps(41,end) 13.15s infinite}
-    .cg3{animation:cur3 18.0s steps(41,end) 13.15s infinite}
+    .ln3{animation:slot 18s linear 13.15s infinite}
+    .r3{animation:ty3 18s steps(41,end) 13.15s infinite}
+    .cg3{animation:cur3 18s steps(41,end) 13.15s infinite}
     @keyframes ty3{0%{transform:scaleX(0)}6.39%{transform:scaleX(1)}100%{transform:scaleX(1)}}
     @keyframes cur3{0%{transform:translateX(0)}6.39%{transform:translateX(492px)}100%{transform:translateX(492px)}}
-    .ln4{animation:slot 18.0s linear 16.75s infinite}
-    .r4{animation:ty4 18.0s steps(40,end) 16.75s infinite}
-    .cg4{animation:cur4 18.0s steps(40,end) 16.75s infinite}
+    .ln4{animation:slot 18s linear 16.75s infinite}
+    .r4{animation:ty4 18s steps(40,end) 16.75s infinite}
+    .cg4{animation:cur4 18s steps(40,end) 16.75s infinite}
     @keyframes ty4{0%{transform:scaleX(0)}6.39%{transform:scaleX(1)}100%{transform:scaleX(1)}}
     @keyframes cur4{0%{transform:translateX(0)}6.39%{transform:translateX(480px)}100%{transform:translateX(480px)}}
     @keyframes slot{0%{opacity:1}16.94%{opacity:1}18.61%{opacity:0}100%{opacity:0}}
-    .curbar{fill:#ff5a1f;animation:blink 1s steps(1,end) infinite}
+    .curbar{fill:#4da3ff;animation:blink 1s steps(1,end) infinite}
     @keyframes blink{0%,50%{opacity:1}50.01%,100%{opacity:.15}}
 
     .rec{animation:rec 1.6s steps(1,end) infinite}
     @keyframes rec{0%,55%{opacity:1}55.01%,100%{opacity:.12}}
-    .digA{animation:roll .42s steps(10,end) infinite}
-    .digB{animation:roll 4.2s steps(10,end) infinite}
-    @keyframes roll{0%{transform:translateY(0)}100%{transform:translateY(-200px)}}
+    .ff{animation:roll 1s steps(24,end) infinite}
+    @keyframes roll{0%{transform:translateY(0)}100%{transform:translateY(-480px)}}
 
     .grain{animation:flick .5s steps(2,end) infinite}
     @keyframes flick{0%{opacity:.055}100%{opacity:.085}}
 
     @media (prefers-reduced-motion: reduce){
-      .wm path,.lbT,.lbB,.rule,.fadeup,.line,.clip,.cg0,.cg1,.cg2,.cg3,.cg4,.swp,.grain,.digA,.digB,.rec,.curbar,.nameglow{animation:none!important}
+      .wm path,.lbT,.lbB,.rule,.fadeup,.line,.clip,.swp,.grain,.ff,.rec,.curbar,.nameglow{animation:none!important}
       .wm path{stroke-dashoffset:0}
       .line{opacity:0}.ln0{opacity:1}
-      .cg0{transform:translateX(480px)}
       .swp{opacity:0}
     }
   </style>
 </defs>
 
 <rect width="1200" height="460" fill="url(#bgg)"/>
-<rect width="1200" height="460" fill="url(#warm)"/>
+<rect width="1200" height="460" fill="url(#wash)"/>
 <g mask="url(#gridmask)"><rect width="1200" height="460" fill="url(#grid)"/></g>
 <rect width="1200" height="460" fill="url(#scan)"/>
 
@@ -146,7 +141,7 @@
 </g>
 
 <g class="fadeup d1">
-  <text class="mono amber" x="600" y="128" font-size="12" letter-spacing="6.5" text-anchor="middle">DESIGN &#215; ENGINEERING</text>
+  <text class="mono accent" x="600" y="128" font-size="12" letter-spacing="6.5" text-anchor="middle">DESIGN × ENGINEERING</text>
 </g>
 
 <g class="nameglow">
@@ -156,27 +151,27 @@
   <g class="swp"><rect x="0" y="140" width="240" height="160" fill="url(#sweep)" opacity=".85"/></g>
 </g>
 
-<rect class="rule" x="490" y="308" width="220" height="2" fill="#ff5a1f"/>
+<rect class="rule" x="490" y="308" width="220" height="2" fill="#4da3ff"/>
 
 <g class="line ln0">
-  <g clip-path="url(#c0)"><text class="mono bone" x="360.0" y="356" font-size="20">full-stack dev · ui/ux · design-obsessed</text></g>
-  <g class="cg0"><rect class="curbar" x="360.0" y="338" width="11" height="23"/></g>
+  <g clip-path="url(#c0)"><text class="mono bone" x="360" y="356" font-size="20">full-stack dev · ui/ux · design-obsessed</text></g>
+  <g class="cg0"><rect class="curbar" x="360" y="338" width="11" height="23"/></g>
 </g>
 <g class="line ln1">
-  <g clip-path="url(#c1)"><text class="mono bone" x="336.0" y="356" font-size="20">i make things that feel as good as they work</text></g>
-  <g class="cg1"><rect class="curbar" x="336.0" y="338" width="11" height="23"/></g>
+  <g clip-path="url(#c1)"><text class="mono bone" x="336" y="356" font-size="20">i make things that feel as good as they work</text></g>
+  <g class="cg1"><rect class="curbar" x="336" y="338" width="11" height="23"/></g>
 </g>
 <g class="line ln2">
-  <g clip-path="url(#c2)"><text class="mono bone" x="336.0" y="356" font-size="20">if it doesn't exist yet, that's just a to-do</text></g>
-  <g class="cg2"><rect class="curbar" x="336.0" y="338" width="11" height="23"/></g>
+  <g clip-path="url(#c2)"><text class="mono bone" x="336" y="356" font-size="20">if it doesn't exist yet, that's just a to-do</text></g>
+  <g class="cg2"><rect class="curbar" x="336" y="338" width="11" height="23"/></g>
 </g>
 <g class="line ln3">
-  <g clip-path="url(#c3)"><text class="mono bone" x="354.0" y="356" font-size="20">the last ten percent is the whole product</text></g>
-  <g class="cg3"><rect class="curbar" x="354.0" y="338" width="11" height="23"/></g>
+  <g clip-path="url(#c3)"><text class="mono bone" x="354" y="356" font-size="20">the last ten percent is the whole product</text></g>
+  <g class="cg3"><rect class="curbar" x="354" y="338" width="11" height="23"/></g>
 </g>
 <g class="line ln4">
-  <g clip-path="url(#c4)"><text class="mono bone" x="360.0" y="356" font-size="20">currently building a cinematic portfolio</text></g>
-  <g class="cg4"><rect class="curbar" x="360.0" y="338" width="11" height="23"/></g>
+  <g clip-path="url(#c4)"><text class="mono bone" x="360" y="356" font-size="20">currently building a cinematic portfolio</text></g>
+  <g class="cg4"><rect class="curbar" x="360" y="338" width="11" height="23"/></g>
 </g>
 
 <rect class="grain" width="1200" height="460" filter="url(#grain)" opacity=".07" style="mix-blend-mode:overlay"/>
@@ -185,11 +180,10 @@
 <rect class="lb lbB" x="0" y="402" width="1200" height="58"/>
 
 <g class="fadeup d3">
-  <circle class="rec" cx="66" cy="434" r="5" fill="#ff5a1f"/>
+  <circle class="rec" cx="66" cy="434" r="5" fill="#4da3ff"/>
   <text class="mono dim" x="80" y="438" font-size="12" letter-spacing="2.5">REC</text>
   <text class="mono dim" x="128" y="438" font-size="12" letter-spacing="2.5">24FPS &#183; 2.39:1</text>
-  <text class="mono dim" x="962" y="438" font-size="12">TC 00:01:</text>
-  <g clip-path="url(#tcB)"><g class="digB"><text class="mono dim" x="1027" y="437" font-size="12">0</text><text class="mono dim" x="1027" y="457" font-size="12">1</text><text class="mono dim" x="1027" y="477" font-size="12">2</text><text class="mono dim" x="1027" y="497" font-size="12">3</text><text class="mono dim" x="1027" y="517" font-size="12">4</text><text class="mono dim" x="1027" y="537" font-size="12">5</text><text class="mono dim" x="1027" y="557" font-size="12">6</text><text class="mono dim" x="1027" y="577" font-size="12">7</text><text class="mono dim" x="1027" y="597" font-size="12">8</text><text class="mono dim" x="1027" y="617" font-size="12">9</text><text class="mono dim" x="1027" y="637" font-size="12">0</text></g></g>
-  <g clip-path="url(#tcA)"><g class="digA"><text class="mono dim" x="1035" y="437" font-size="12">0</text><text class="mono dim" x="1035" y="457" font-size="12">1</text><text class="mono dim" x="1035" y="477" font-size="12">2</text><text class="mono dim" x="1035" y="497" font-size="12">3</text><text class="mono dim" x="1035" y="517" font-size="12">4</text><text class="mono dim" x="1035" y="537" font-size="12">5</text><text class="mono dim" x="1035" y="557" font-size="12">6</text><text class="mono dim" x="1035" y="577" font-size="12">7</text><text class="mono dim" x="1035" y="597" font-size="12">8</text><text class="mono dim" x="1035" y="617" font-size="12">9</text><text class="mono dim" x="1035" y="637" font-size="12">0</text></g></g>
+  <text class="mono dim" x="944" y="438" font-size="12">TC 21:20:51:</text>
+  <g clip-path="url(#tcF)"><g class="ff"><text class="mono dim" x="1031" y="437" font-size="12">00</text><text class="mono dim" x="1031" y="457" font-size="12">01</text><text class="mono dim" x="1031" y="477" font-size="12">02</text><text class="mono dim" x="1031" y="497" font-size="12">03</text><text class="mono dim" x="1031" y="517" font-size="12">04</text><text class="mono dim" x="1031" y="537" font-size="12">05</text><text class="mono dim" x="1031" y="557" font-size="12">06</text><text class="mono dim" x="1031" y="577" font-size="12">07</text><text class="mono dim" x="1031" y="597" font-size="12">08</text><text class="mono dim" x="1031" y="617" font-size="12">09</text><text class="mono dim" x="1031" y="637" font-size="12">10</text><text class="mono dim" x="1031" y="657" font-size="12">11</text><text class="mono dim" x="1031" y="677" font-size="12">12</text><text class="mono dim" x="1031" y="697" font-size="12">13</text><text class="mono dim" x="1031" y="717" font-size="12">14</text><text class="mono dim" x="1031" y="737" font-size="12">15</text><text class="mono dim" x="1031" y="757" font-size="12">16</text><text class="mono dim" x="1031" y="777" font-size="12">17</text><text class="mono dim" x="1031" y="797" font-size="12">18</text><text class="mono dim" x="1031" y="817" font-size="12">19</text><text class="mono dim" x="1031" y="837" font-size="12">20</text><text class="mono dim" x="1031" y="857" font-size="12">21</text><text class="mono dim" x="1031" y="877" font-size="12">22</text><text class="mono dim" x="1031" y="897" font-size="12">23</text><text class="mono dim" x="1031" y="917" font-size="12">00</text></g></g>
 </g>
 </svg>

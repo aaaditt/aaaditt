@@ -3,6 +3,7 @@
 // In CI: needs GITHUB_TOKEN + GH_LOGIN. Locally: `node build-stats.mjs --mock mock.json`.
 import { writeFileSync, readFileSync, mkdirSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
+import { C, HEAT, CAT, esc, stamp } from './palette.mjs';
 
 const LOGIN = process.env.GH_LOGIN || 'aaaditt';
 const OUT = resolve(process.argv.find(a => a.startsWith('--out='))?.slice(6) || 'assets/stats.svg');
@@ -67,7 +68,6 @@ function mock() {
 }
 
 // ---------- helpers ----------
-const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const CW = 0.6; // monospace advance ratio
 
 function streaks(days) {
@@ -92,9 +92,10 @@ function render(data) {
   const shown = langs.reduce((s, l) => s + l.size, 0);
   const otherPct = Math.max(0, 100 - (shown / langTotal) * 100);
 
-  const RAMP = ['#15151a', '#4a2a18', '#8a4520', '#c2591f', '#ff5a1f'];
-  // warm ramp keeps the language bar on-theme instead of GitHub's stock blues
-  const LRAMP = ['#ff5a1f', '#ff8c42', '#e0a458', '#c9b8a0', '#8d8a93', '#55535c'];
+  // sequential: one hue, light→dark. the only honest encoding for magnitude.
+  const RAMP = HEAT;
+  // categorical: fixed order, validated for colourblind separation on this surface.
+  const LRAMP = CAT;
 
   // ---- metric tiles ----
   const tiles = [
@@ -108,8 +109,8 @@ function render(data) {
   const tileSvg = tiles.map(([v, label, hot], i) => {
     const x = PAD + i * TW, d = 0.18 + i * 0.09;
     return `<g class="tile" style="animation-delay:${d.toFixed(2)}s">`
-      + (i ? `<rect x="${(x - 14).toFixed(1)}" y="98" width="1" height="52" fill="#22222a"/>` : '')
-      + `<text class="mono ${hot ? 'amber' : 'bone'}" x="${x.toFixed(1)}" y="130" font-size="30">${v}</text>`
+      + (i ? `<rect x="${(x - 14).toFixed(1)}" y="98" width="1" height="52" fill="${C.line}"/>` : '')
+      + `<text class="mono ${hot ? 'accent' : 'bone'}" x="${x.toFixed(1)}" y="130" font-size="30">${v}</text>`
       + `<text class="mono dim" x="${x.toFixed(1)}" y="152" font-size="10.5" letter-spacing="1.6">${label}</text></g>`;
   }).join('');
 
@@ -140,10 +141,12 @@ function render(data) {
   // ---- language bar ----
   const BARY = HBOT + 92, BARH = 16;
   let acc = 0;
+  // a 2px gap of surface between segments, so neighbours never bleed into one
+  // another for a reader who can't separate the two hues
   const segs = langs.map((l, i) => {
     const w = (l.size / langTotal) * IN, x = PAD + acc; acc += w;
-    return `<rect x="${x.toFixed(1)}" y="${BARY}" width="${Math.max(0, w).toFixed(1)}" height="${BARH}" fill="${LRAMP[i % LRAMP.length]}"/>`;
-  }).join('') + `<rect x="${(PAD + acc).toFixed(1)}" y="${BARY}" width="${Math.max(0, IN - acc).toFixed(1)}" height="${BARH}" fill="#2b2b34"/>`;
+    return `<rect x="${x.toFixed(1)}" y="${BARY}" width="${Math.max(0.5, w - 2).toFixed(1)}" height="${BARH}" fill="${LRAMP[i % LRAMP.length]}"/>`;
+  }).join('') + `<rect x="${(PAD + acc).toFixed(1)}" y="${BARY}" width="${Math.max(0, IN - acc).toFixed(1)}" height="${BARH}" fill="${C.line2}"/>`;
 
   const LEGY = BARY + 48;
   let lx = PAD;
@@ -160,20 +163,21 @@ function render(data) {
   }).join('');
 
   const H = LEGY + 34;
-  const synced = new Date().toISOString().slice(0, 10);
+  const t = stamp(Number(process.env.TZ_OFFSET ?? 4));
+  const synced = `${t.date} ${t.hhmm} gst`;
 
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="GitHub statistics for ${esc(LOGIN)}">
 <defs>
-  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0c0c10"/><stop offset="1" stop-color="#08080a"/></linearGradient>
-  <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#f2ede4" fill-opacity="0.05"/></pattern>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${C.bg1}"/><stop offset="1" stop-color="${C.bg2}"/></linearGradient>
+  <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="${C.bone}" fill-opacity="0.05"/></pattern>
   <linearGradient id="scanl" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#ff5a1f" stop-opacity="0"/><stop offset="0.5" stop-color="#ff5a1f" stop-opacity="0.5"/><stop offset="1" stop-color="#ff5a1f" stop-opacity="0"/>
+    <stop offset="0" stop-color="${C.accent}" stop-opacity="0"/><stop offset="0.5" stop-color="${C.accent}" stop-opacity="0.5"/><stop offset="1" stop-color="${C.accent}" stop-opacity="0"/>
   </linearGradient>
   <clipPath id="barclip"><rect x="${PAD}" y="${BARY}" width="${IN}" height="${BARH}" rx="${BARH / 2}"/></clipPath>
   <clipPath id="barwipe"><rect class="wipe" x="${PAD}" y="${BARY}" width="${IN}" height="${BARH}"/></clipPath>
   <style>
     .mono{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace}
-    .bone{fill:#f2ede4}.amber{fill:#ff5a1f}.dim{fill:#8d8a93}
+    .bone{fill:${C.bone}}.accent{fill:${C.accent}}.dim{fill:${C.dim}}
     .hd,.tile,.lg,.sec{opacity:0;animation:rise .55s cubic-bezier(.16,.9,.2,1) both}
     @keyframes rise{0%{opacity:0;transform:translateY(9px)}100%{opacity:1;transform:translateY(0)}}
     .hd{animation-delay:.05s}
@@ -191,19 +195,19 @@ function render(data) {
 </defs>
 <rect width="${W}" height="${H}" rx="16" fill="url(#bg)"/>
 <rect width="${W}" height="${H}" rx="16" fill="url(#dots)"/>
-<rect x="0.5" y="0.5" width="${W - 1}" height="${H - 1}" rx="16" fill="none" stroke="#22222a"/>
+<rect x="0.5" y="0.5" width="${W - 1}" height="${H - 1}" rx="16" fill="none" stroke="${C.line}"/>
 
 <g class="hd">
-  <text class="mono amber" x="${PAD}" y="52" font-size="13" letter-spacing="5">TELEMETRY</text>
+  <text class="mono accent" x="${PAD}" y="52" font-size="13" letter-spacing="5">TELEMETRY</text>
   <text class="mono dim" x="${W - PAD}" y="52" font-size="12" text-anchor="end">auto-synced ${synced}</text>
-  <rect x="${PAD}" y="70" width="${IN}" height="1" fill="#22222a"/>
+  <rect x="${PAD}" y="70" width="${IN}" height="1" fill="${C.line}"/>
 </g>
 
 <g class="scan"><rect x="${PAD}" y="80" width="${IN}" height="2" fill="url(#scanl)"/></g>
 
 ${tileSvg}
 
-<rect x="${PAD}" y="178" width="${IN}" height="1" fill="#22222a"/>
+<rect x="${PAD}" y="178" width="${IN}" height="1" fill="${C.line}"/>
 <g class="sec" style="animation-delay:.26s">
   <text class="mono dim" x="${PAD}" y="210" font-size="11" letter-spacing="2.2">CONTRIBUTION HEATMAP &#183; PAST YEAR</text>
   <text class="mono dim" x="${W - PAD - 115}" y="210" font-size="10.5" text-anchor="end">less</text>
@@ -212,7 +216,7 @@ ${tileSvg}
 </g>
 ${cells}
 
-<rect x="${PAD}" y="${HBOT + 34}" width="${IN}" height="1" fill="#22222a"/>
+<rect x="${PAD}" y="${HBOT + 34}" width="${IN}" height="1" fill="${C.line}"/>
 <g class="sec" style="animation-delay:.58s">
   <text class="mono dim" x="${PAD}" y="${HBOT + 66}" font-size="11" letter-spacing="2.2">LANGUAGES BY BYTES</text>
   <text class="mono dim" x="${W - PAD}" y="${HBOT + 66}" font-size="10.5" text-anchor="end">${otherPct > 0.5 ? '+' + otherPct.toFixed(0) + '% other' : ''}</text>
@@ -226,11 +230,11 @@ function placeholder() {
   const W = 1000, H = 150, PAD = 40;
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="Stats card awaiting first sync">
 <defs>
-  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0c0c10"/><stop offset="1" stop-color="#08080a"/></linearGradient>
-  <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#f2ede4" fill-opacity="0.05"/></pattern>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${C.bg1}"/><stop offset="1" stop-color="${C.bg2}"/></linearGradient>
+  <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="${C.bone}" fill-opacity="0.05"/></pattern>
   <style>
     .mono{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace}
-    .dim{fill:#8d8a93}.amber{fill:#ff5a1f}
+    .dim{fill:${C.dim}}.accent{fill:${C.accent}}
     .pulse{animation:p 1.5s ease-in-out infinite}
     @keyframes p{0%,100%{opacity:.25}50%{opacity:1}}
     @media (prefers-reduced-motion: reduce){.pulse{animation:none}}
@@ -238,10 +242,10 @@ function placeholder() {
 </defs>
 <rect width="${W}" height="${H}" rx="16" fill="url(#bg)"/>
 <rect width="${W}" height="${H}" rx="16" fill="url(#dots)"/>
-<rect x="0.5" y="0.5" width="${W - 1}" height="${H - 1}" rx="16" fill="none" stroke="#22222a"/>
-<text class="mono amber" x="${PAD}" y="52" font-size="13" letter-spacing="5">TELEMETRY</text>
-<rect x="${PAD}" y="70" width="${W - PAD * 2}" height="1" fill="#22222a"/>
-<circle class="pulse" cx="${PAD + 6}" cy="104" r="5" fill="#ff5a1f"/>
+<rect x="0.5" y="0.5" width="${W - 1}" height="${H - 1}" rx="16" fill="none" stroke="${C.line}"/>
+<text class="mono accent" x="${PAD}" y="52" font-size="13" letter-spacing="5">TELEMETRY</text>
+<rect x="${PAD}" y="70" width="${W - PAD * 2}" height="1" fill="${C.line}"/>
+<circle class="pulse" cx="${PAD + 6}" cy="104" r="5" fill="${C.accent}"/>
 <text class="mono dim" x="${PAD + 20}" y="109" font-size="14">awaiting first sync &#8212; run the "refresh stats card" workflow</text>
 </svg>`;
 }
