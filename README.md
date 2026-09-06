@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/aaaditt/aaaditt/main/assets/hero.svg?v=b9ac8fe8" alt="Aadit — design × engineering" width="100%" />
+<img src="https://raw.githubusercontent.com/aaaditt/aaaditt/main/assets/hero.svg?v=da39b8b5" alt="Aadit — design × engineering" width="100%" />
 
 <br/>
 
@@ -40,7 +40,7 @@ Currently deep in a cinematic portfolio and a UX certification I keep telling pe
 <td width="50%" valign="top"><a href="https://github.com/aaaditt/caspr"><img src="https://raw.githubusercontent.com/aaaditt/aaaditt/main/assets/proj-4.svg?v=ac9c0111" width="100%" alt="caspr — Hold a key, speak, release. Polished text lands at your cursor in any Windows app. Local Whisper, so audio never leaves the machine." /></a></td>
 </tr>
 <tr>
-<td width="50%" valign="top"><a href="https://github.com/aaaditt/AeroVertex"><img src="https://raw.githubusercontent.com/aaaditt/aaaditt/main/assets/proj-5.svg?v=7e48a145" width="100%" alt="AeroVertex — Airport ground-operations system with a live top-down simulation — 24 hours of activity compressed into 30 interactive minutes." /></a></td>
+<td width="50%" valign="top"><a href="https://github.com/aaaditt/AeroVertex"><img src="https://raw.githubusercontent.com/aaaditt/aaaditt/main/assets/proj-5.svg?v=b0db6b02" width="100%" alt="AeroVertex — Airport ground-operations system with a live top-down simulation — 24 hours of activity compressed into 30 interactive minutes." /></a></td>
 <td width="50%" valign="top"><a href="https://trip-self-six.vercel.app"><img src="https://raw.githubusercontent.com/aaaditt/aaaditt/main/assets/proj-6.svg?v=f2ffd3b3" width="100%" alt="Georgia Trip Planner — Collaborative itinerary builder — vote, rate and argue over 38 experiences across 7 regions until the trip plans itself." /></a></td>
 </tr>
 </table>
@@ -60,9 +60,9 @@ Currently deep in a cinematic portfolio and a UX certification I keep telling pe
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/aaaditt/aaaditt/main/assets/stats.svg?v=7c8f6ab3" alt="GitHub statistics" width="100%" />
+<img src="https://raw.githubusercontent.com/aaaditt/aaaditt/main/assets/stats.svg?v=ab1a1c00" alt="GitHub statistics" width="100%" />
 
-<img src="https://raw.githubusercontent.com/aaaditt/aaaditt/main/assets/pulse.svg?v=fba29f54" alt="Commit rhythm and recent activity" width="100%" />
+<img src="https://raw.githubusercontent.com/aaaditt/aaaditt/main/assets/pulse.svg?v=52e0aa39" alt="Commit rhythm and recent activity" width="100%" />
 
 </div>
 
@@ -72,7 +72,7 @@ Currently deep in a cinematic portfolio and a UX certification I keep telling pe
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/aaaditt/aaaditt/main/assets/reel.svg?v=9e2e22ac" alt="A year of contributions as a twelve-frame film strip" width="100%" />
+<img src="https://raw.githubusercontent.com/aaaditt/aaaditt/main/assets/reel.svg?v=2bbfc5a1" alt="A year of contributions as a twelve-frame film strip" width="100%" />
 
 </div>
 
