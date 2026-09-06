@@ -15,6 +15,7 @@ const CFG = JSON.parse(readFileSync('data/projects.json', 'utf8'));
 const OWNER = process.env.GH_LOGIN || CFG.owner;
 const RAW = `https://raw.githubusercontent.com/${OWNER}/${OWNER}/main`;
 const START = '<!-- showcase:start -->', END = '<!-- showcase:end -->';
+const CHIPS_START = '<!-- chips:start -->', CHIPS_END = '<!-- chips:end -->';
 
 const ver = file => existsSync(file)
   ? createHash('sha1').update(readFileSync(file)).digest('hex').slice(0, 8)
@@ -56,12 +57,25 @@ const block = [
   END,
 ].join('\n');
 
+// the contact row, so adding a link is a one-line edit to data/projects.json
+const chipBlock = [
+  CHIPS_START,
+  ...CFG.contact.map(c => {
+    const f = `assets/chip-${c.label.toLowerCase()}.svg`;
+    return `<a href="${c.url}"><img src="${RAW}/${f}?v=${ver(f)}" height="34" alt="${alt(c.label.toLowerCase())}" /></a>`;
+  }),
+  CHIPS_END,
+].join('\n');
+
 let md = readFileSync('README.md', 'utf8');
-if (!md.includes(START) || !md.includes(END)) {
-  console.error(`README.md is missing the ${START} / ${END} markers — nothing to do.`);
-  process.exit(1);
+for (const [a, b] of [[START, END], [CHIPS_START, CHIPS_END]]) {
+  if (!md.includes(a) || !md.includes(b)) {
+    console.error(`README.md is missing the ${a} / ${b} markers — nothing to do.`);
+    process.exit(1);
+  }
 }
 md = md.slice(0, md.indexOf(START)) + block + md.slice(md.indexOf(END) + END.length);
+md = md.slice(0, md.indexOf(CHIPS_START)) + chipBlock + md.slice(md.indexOf(CHIPS_END) + CHIPS_END.length);
 
 // stamp every asset reference with its content hash
 const rx = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');

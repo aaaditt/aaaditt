@@ -8,12 +8,82 @@
 // The timecode in the letterbox is real: HH:MM:SS is the moment this file was
 // built (gulf standard time) and the frame field genuinely advances 24 times a
 // second, which is what the 24FPS stamp next to it has always claimed.
-import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { C, esc, stamp } from './palette.mjs';
 
 const SITE = JSON.parse(readFileSync('data/site.json', 'utf8'));
 const TZ = Number(process.env.TZ_OFFSET ?? 4);
 const now = stamp(TZ);
+const PORTRAIT = existsSync('data/portrait.json')
+  ? JSON.parse(readFileSync('data/portrait.json', 'utf8')) : null;
+
+// ---------------------------------------------------------------- portrait
+// The avatar, rebuilt out of the same little rounded squares the contribution
+// heatmap is made of: one cell per source pixel, sized and lit by how dark that
+// pixel was, sky dropped entirely. It develops in on a diagonal, like a print
+// coming up in a tray. Geometry is solved from the figure's bounding box so a
+// new avatar lands in the same place without anyone touching these numbers.
+function portrait(p, headY, centreX) {
+  const { rows, w, h } = PORTRAIT;
+  const ox = centreX - (w / 2) * p;
+  const oy = headY;
+
+  // Stored values run 1 (lightest source pixel) to 15 (darkest). Read as a
+  // positive — light skin bright, dark hoodie recessive — the face survives;
+  // read as a negative it flattens into a silhouette. So: positive, with the
+  // range stretched across the figure's own min and max rather than 1..15,
+  // which is what stops the whole thing turning into one flat mass.
+  const vals = rows.flatMap(row => [...row].map(ch => parseInt(ch, 16)).filter(v => v > 0));
+  const lo = Math.min(...vals), hi = Math.max(...vals);
+
+  // Six ink levels. Quantising lets every cell of one level in one diagonal band
+  // share a single <path> — ~2000 squares in about 50KB instead of 200KB, and the
+  // band is what the develop animation fades in, so the picture still comes up
+  // across the frame rather than all at once.
+  const SZ = [0.34, 0.47, 0.60, 0.73, 0.87, 1.00];
+  const FILL = [C.accentDim, C.accentDeep, C.accentDeep, C.accent, C.accent, C.accentHot];
+  const OP = ['.48', '.60', '.72', '.84', '.94', '1'];
+  const BANDS = 22;
+  const groups = new Map();
+
+  rows.forEach((row, r) => {
+    for (let c = 0; c < row.length; c++) {
+      const v = parseInt(row[c], 16);
+      if (v === 0) continue;                                  // sky: prints nothing
+      // Read as a positive — lit skin bright, hoodie in shadow — so the face
+      // survives; a negative flattens the whole thing into a hooded silhouette.
+      // The gamma lifts the mid-tones so the body still has mass under the face.
+      const t = Math.pow(1 - (v - lo) / Math.max(1, hi - lo), 0.72);
+      const tone = Math.min(5, Math.floor(t * 5.999));
+      const band = Math.min(BANDS - 1, Math.round((r + c) / (rows.length + row.length - 2) * (BANDS - 1)));
+      const size = SZ[tone] * p * 0.96;
+      const off = (p - size) / 2;
+      const x = (ox + c * p + off).toFixed(1), y = (oy + r * p + off).toFixed(1);
+      const s = size.toFixed(1);
+      const key = `${tone}:${band}`;
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(`M${x} ${y}h${s}v${s}h-${s}z`);
+    }
+  });
+
+  const paths = [...groups].map(([key, d]) => {
+    const [tone, band] = key.split(':').map(Number);
+    return `<path class="px b${band}" fill="${FILL[tone]}" fill-opacity="${OP[tone]}" d="${d.join('')}"/>`;
+  }).join('');
+
+  const bucketCss = Array.from({ length: BANDS }, (_, b) =>
+    `.b${b}{animation-delay:${(0.35 + b * 0.055).toFixed(2)}s}`).join('');
+
+  return {
+    svg: paths,
+    css: `.px{opacity:0;animation:dev .7s ease-out both}
+    @keyframes dev{0%{opacity:0}100%{opacity:1}}
+    ${bucketCss}`,
+    left: ox,
+    right: ox + w * p,
+    bottom: oy + h * p,
+  };
+}
 
 // ---------------------------------------------------------------- hero
 // The wordmark is drawn, not typed — five stroked paths spelling AADIT, each one
@@ -36,9 +106,13 @@ function hero() {
   const typePct = pct(1.15);                      // how long a line takes to type
   const outA = pct(DWELL - 0.55), outB = pct(DWELL - 0.25);
 
+  // With a portrait in frame the whole type block moves right and goes ragged-left;
+  // without one the hero falls back to the centred title card it used to be.
+  const por = PORTRAIT ? portrait(3.43, 148, 306) : null;
+  const TX = 441;                                  // left edge of the type block
   const geom = lines.map(t => {
     const w = t.length * ADV;
-    return { t, w, x: +(MID - w / 2).toFixed(1), chars: t.length };
+    return { t, w, x: por ? TX : +(MID - w / 2).toFixed(1), chars: t.length };
   });
 
   const clips = geom.map((g, i) =>
@@ -99,7 +173,7 @@ function hero() {
   </filter>
 ${WORDMARK}
   <mask id="nameMask">
-    <g transform="translate(346,150) scale(0.95)" fill="none" stroke="#fff" stroke-width="11.5"
+    <g transform="${por ? `translate(${TX},172) scale(0.82)` : 'translate(346,150) scale(0.95)'}" fill="none" stroke="#fff" stroke-width="11.5"
        stroke-linecap="round" stroke-linejoin="round"><use href="#wordmark"/></g>
   </mask>
 
@@ -151,11 +225,14 @@ ${WORDMARK}
     .grain{animation:flick .5s steps(2,end) infinite}
     @keyframes flick{0%{opacity:.055}100%{opacity:.085}}
 
+    ${por ? por.css : ''}
+
     @media (prefers-reduced-motion: reduce){
       .wm path,.lbT,.lbB,.rule,.fadeup,.line,.clip,.swp,.grain,.ff,.rec,.curbar,.nameglow{animation:none!important}
       .wm path{stroke-dashoffset:0}
       .line{opacity:0}.ln0{opacity:1}
       .swp{opacity:0}
+      .px{animation:none!important;opacity:1;transform:none}
     }
   </style>
 </defs>
@@ -170,18 +247,24 @@ ${WORDMARK}
   <path d="M34 376 V392 H50"/><path d="M1166 376 V392 H1150"/>
 </g>
 
+${por ? `${por.svg}
+<g class="fadeup d3">
+  <text class="mono dim" x="${por.left.toFixed(0)}" y="${(148 - 22).toFixed(0)}" font-size="9.5" letter-spacing="2.6">SUBJECT 01</text>
+  <rect x="${por.left.toFixed(0)}" y="${(148 - 16).toFixed(0)}" width="26" height="1" fill="${C.accent}" opacity=".7"/>
+</g>` : ''}
+
 <g class="fadeup d1">
-  <text class="mono accent" x="${MID}" y="128" font-size="12" letter-spacing="6.5" text-anchor="middle">${esc(SITE.kicker)}</text>
+  <text class="mono accent" x="${por ? TX : MID}" y="${por ? 150 : 128}" font-size="12" letter-spacing="6.5"${por ? '' : ' text-anchor="middle"'}>${esc(SITE.kicker)}</text>
 </g>
 
 <g class="nameglow">
-  <g class="wm" transform="translate(346,150) scale(0.95)"><use href="#wordmark"/></g>
+  <g class="wm" transform="${por ? `translate(${TX},172) scale(0.82)` : 'translate(346,150) scale(0.95)'}"><use href="#wordmark"/></g>
 </g>
 <g mask="url(#nameMask)" style="mix-blend-mode:screen">
   <g class="swp"><rect x="0" y="140" width="240" height="160" fill="url(#sweep)" opacity=".85"/></g>
 </g>
 
-<rect class="rule" x="490" y="308" width="220" height="2" fill="${C.accent}"/>
+<rect class="rule" x="${por ? TX : 490}" y="308" width="${por ? 200 : 220}" height="2" fill="${C.accent}"/>
 
 ${lineSvg}
 

@@ -1,0 +1,40 @@
+name: generate contribution snake
+
+# The reel in section 04 shows the year as film. This shows the same year being
+# eaten. Both are the same contribution data, read two different ways.
+
+on:
+  schedule:
+    - cron: "0 */12 * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/snake.yml"
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Generate snake
+        uses: Platane/snk@v3
+        id: snake
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          # Palette matches scripts/palette.mjs — HEAT for the cells, accent for
+          # the snake. If the accent changes there, change these five hexes too;
+          # this action can't import the module.
+          outputs: |
+            dist/snake.svg?palette=github-dark&color_snake=#4da3ff&color_dots=#15151a,#14304f,#1f5896,#2f7ad1,#4da3ff
+            dist/snake-light.svg?palette=github-light&color_snake=#2f7ad1&color_dots=#ebedf0,#cde2fb,#86b6ef,#3987e5,#1c5cab
+
+      - name: Push to output branch
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

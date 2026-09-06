@@ -33,6 +33,12 @@ jobs:
         with:
           node-version: "20"
 
+      # Re-samples the avatar so a new profile picture reaches the hero on its
+      # own. Never fatal: if it can't run, the committed grid is still good.
+      - name: Portrait from the live avatar
+        continue-on-error: true
+        run: npm i --no-save --no-audit --no-fund sharp && node scripts/build-portrait.mjs
+
       - name: Hero and divider
         run: node scripts/build-chrome.mjs
 
@@ -59,6 +65,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets README.md
+          git add assets README.md data/portrait.json
           git diff --quiet --staged || git commit -m "chore: refresh profile"
           git push

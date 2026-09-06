@@ -1,12 +1,15 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/aaaditt/aaaditt/main/assets/hero.svg?v=da39b8b5" alt="Aadit — design × engineering" width="100%" />
+<img src="https://raw.githubusercontent.com/aaaditt/aaaditt/main/assets/hero.svg?v=cf6e26fa" alt="Aadit — design × engineering" width="100%" />
 
 <br/>
 
-<a href="https://linkedin.com/in/aadit-chandra"><img src="https://raw.githubusercontent.com/aaaditt/aaaditt/main/assets/chip-linkedin.svg?v=09b03226" height="34" alt="Linkedin" /></a>
-<a href="mailto:work.aadit@gmail.com"><img src="https://raw.githubusercontent.com/aaaditt/aaaditt/main/assets/chip-email.svg?v=721b65ae" height="34" alt="Email" /></a>
-<a href="https://orcid.org/0009-0006-9429-1479"><img src="https://raw.githubusercontent.com/aaaditt/aaaditt/main/assets/chip-orcid.svg?v=f6e51cb6" height="34" alt="Orcid" /></a>
+<!-- chips:start -->
+<a href="https://aaditchandra.com"><img src="https://raw.githubusercontent.com/aaaditt/aaaditt/main/assets/chip-portfolio.svg?v=56f7794d" height="34" alt="portfolio" /></a>
+<a href="https://linkedin.com/in/aadit-chandra"><img src="https://raw.githubusercontent.com/aaaditt/aaaditt/main/assets/chip-linkedin.svg?v=09b03226" height="34" alt="linkedin" /></a>
+<a href="mailto:work.aadit@gmail.com"><img src="https://raw.githubusercontent.com/aaaditt/aaaditt/main/assets/chip-email.svg?v=721b65ae" height="34" alt="email" /></a>
+<a href="https://orcid.org/0009-0006-9429-1479"><img src="https://raw.githubusercontent.com/aaaditt/aaaditt/main/assets/chip-orcid.svg?v=f6e51cb6" height="34" alt="orcid" /></a>
+<!-- chips:end -->
 
 <img src="https://raw.githubusercontent.com/aaaditt/aaaditt/main/assets/divider.svg?v=f07e677a" width="100%" alt="" />
 
@@ -76,7 +79,21 @@ Currently deep in a cinematic portfolio and a UX certification I keep telling pe
 
 </div>
 
-### `05` &nbsp;THE MACHINE
+### `05` &nbsp;THE SNAKE EATS MY COMMITS
+
+<sub>*the same year the reel just showed you, being eaten one day at a time. this is fine.*</sub>
+
+<div align="center">
+
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/aaaditt/aaaditt/output/snake.svg" />
+<source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/aaaditt/aaaditt/output/snake-light.svg" />
+<img alt="Contribution snake" src="https://raw.githubusercontent.com/aaaditt/aaaditt/output/snake.svg" width="100%" />
+</picture>
+
+</div>
+
+### `06` &nbsp;THE MACHINE
 
 <details>
 <summary><sub><b>director's commentary</b> — how this page builds itself</sub></summary>
@@ -95,18 +112,15 @@ flowchart LR
   F[demotape] -.-> G[assets/demos/*.gif] -.-> E
 ```
 
-<sub>
-
 - **`scripts/palette.mjs`** — the whole look lives in one file. Change the accent there and the next refresh recolours every card on the page.
-- **`build-chrome.mjs`** — the hero. The wordmark draws itself, the taglines type themselves, and the timecode in the letterbox is the real build time. The frame field genuinely advances 24 times a second, which is what the `24FPS` stamp beside it has always claimed.
+- **`build-chrome.mjs`** — the hero. The wordmark draws itself, the taglines type themselves, and the figure standing in frame is my avatar rebuilt as a halftone — one printed square per pixel, sized by how much ink that pixel wanted. The timecode in the letterbox is the real build time, and its frame field genuinely advances 24 times a second, which is what the `24FPS` stamp beside it has always claimed.
+- **`build-portrait.mjs`** — samples the live avatar, drops the background, and writes the halftone grid the hero prints from. New avatar, same command, new portrait.
 - **`build-reel.mjs`** — section 04. Twelve months, twelve frames, a projector gate that steps through them.
 - **`build-stats.mjs` / `build-pulse.mjs`** — telemetry from the GitHub API. The heatmap is one hue on a light-to-dark ramp; the language bar's colours were run through a colourblind-separation check rather than picked by eye.
-- **`build-readme.mjs`** — regenerates the grid in section 02 and stamps each image URL with a hash of that file, so GitHub's image cache can't serve you last week's numbers.
+- **`build-readme.mjs`** — regenerates the grid in section 02 and the contact row above, then stamps each image URL with a hash of that file, so GitHub's image cache can't serve you last week's numbers.
 - **`.github/workflows/demotape.yml`** — points [demotape](https://github.com/aaaditt/video-editor) at one of my own projects, records the flow, and commits the clip. Any project with a recorded clip shows it above its card automatically.
 
 Adding a project, a tool, or a contact link is a one-line edit to `data/`. The layout solves itself.
-
-</sub>
 
 </details>
 

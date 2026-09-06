@@ -2,9 +2,10 @@
   "owner": "aaaditt",
   "_howto": "Add a project here and the README grid rebuilds itself. Optional per-project keys: \"url\" overrides the GitHub link; \"note\" renders a director's-commentary dropdown under the grid. Drop a recorded clip at assets/demos/<repo>.gif and it appears above that project's card automatically — see .github/workflows/demotape.yml.",
   "contact": [
-    { "label": "LINKEDIN", "url": "https://linkedin.com/in/aadit-chandra" },
-    { "label": "EMAIL",    "url": "mailto:work.aadit@gmail.com" },
-    { "label": "ORCID",    "url": "https://orcid.org/0009-0006-9429-1479" }
+    { "label": "PORTFOLIO", "url": "https://aaditchandra.com" },
+    { "label": "LINKEDIN",  "url": "https://linkedin.com/in/aadit-chandra" },
+    { "label": "EMAIL",     "url": "mailto:work.aadit@gmail.com" },
+    { "label": "ORCID",     "url": "https://orcid.org/0009-0006-9429-1479" }
   ],
   "projects": [
     { "repo": "video-editor", "name": "demotape",
