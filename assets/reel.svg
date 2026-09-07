@@ -47,7 +47,7 @@
 <g class="hd">
   <text class="mono accent" x="40" y="52" font-size="13" letter-spacing="5">THE REEL</text>
   <circle class="rec" cx="164" cy="48" r="3.5" fill="#4da3ff"/>
-  <text class="mono dim" x="960" y="52" font-size="12" text-anchor="end">12 frames &#183; 799 contributions &#183; cut 2026-09-06</text>
+  <text class="mono dim" x="960" y="52" font-size="12" text-anchor="end">12 frames &#183; 799 contributions &#183; cut 2026-09-07</text>
   <rect x="40" y="70" width="920" height="1" fill="#22222a"/>
 </g>
 
@@ -141,7 +141,7 @@
   <rect x="883.3" y="112" width="68.7" height="91.1" rx="4" fill="#08080a" stroke="#22222a"/>
   <text class="mono accent" x="891.3" y="128" font-size="10" letter-spacing="1.4">SEP</text>
   <text class="mono faint" x="944.0" y="128" font-size="8.5" text-anchor="end">12</text>
-  <rect class="cell" x="906.3" y="136.0" width="6.6" height="6.6" rx="1.5" fill="#14304f" style="animation-delay:0.77s"/><rect class="cell" x="914.4" y="136.0" width="6.6" height="6.6" rx="1.5" fill="#15151a" style="animation-delay:0.78s"/><rect class="cell" x="922.5" y="136.0" width="6.6" height="6.6" rx="1.5" fill="#1f5896" style="animation-delay:0.79s"/><rect class="cell" x="930.6" y="136.0" width="6.6" height="6.6" rx="1.5" fill="#14304f" style="animation-delay:0.80s"/><rect class="cell" x="938.7" y="136.0" width="6.6" height="6.6" rx="1.5" fill="#14304f" style="animation-delay:0.82s"/><rect class="cell" x="890.1" y="144.1" width="6.6" height="6.6" rx="1.5" fill="#4da3ff" style="animation-delay:0.74s"/>
+  <rect class="cell" x="906.3" y="136.0" width="6.6" height="6.6" rx="1.5" fill="#14304f" style="animation-delay:0.77s"/><rect class="cell" x="914.4" y="136.0" width="6.6" height="6.6" rx="1.5" fill="#15151a" style="animation-delay:0.78s"/><rect class="cell" x="922.5" y="136.0" width="6.6" height="6.6" rx="1.5" fill="#1f5896" style="animation-delay:0.79s"/><rect class="cell" x="930.6" y="136.0" width="6.6" height="6.6" rx="1.5" fill="#14304f" style="animation-delay:0.80s"/><rect class="cell" x="938.7" y="136.0" width="6.6" height="6.6" rx="1.5" fill="#14304f" style="animation-delay:0.82s"/><rect class="cell" x="890.1" y="144.1" width="6.6" height="6.6" rx="1.5" fill="#4da3ff" style="animation-delay:0.74s"/><rect class="cell" x="898.2" y="144.1" width="6.6" height="6.6" rx="1.5" fill="#15151a" style="animation-delay:0.76s"/>
   <text class="mono dim" x="917.7" y="196.1" font-size="9.5" text-anchor="middle">36</text>
 </g>
 <rect class="gate" x="40.0" y="112" width="68.7" height="91.1" rx="4" fill="#4da3ff" fill-opacity="0.06" stroke="#4da3ff" style="animation-delay:0.00s"/><rect class="gate" x="116.7" y="112" width="68.7" height="91.1" rx="4" fill="#4da3ff" fill-opacity="0.06" stroke="#4da3ff" style="animation-delay:1.15s"/><rect class="gate" x="193.3" y="112" width="68.7" height="91.1" rx="4" fill="#4da3ff" fill-opacity="0.06" stroke="#4da3ff" style="animation-delay:2.30s"/><rect class="gate" x="270.0" y="112" width="68.7" height="91.1" rx="4" fill="#4da3ff" fill-opacity="0.06" stroke="#4da3ff" style="animation-delay:3.45s"/><rect class="gate" x="346.7" y="112" width="68.7" height="91.1" rx="4" fill="#4da3ff" fill-opacity="0.06" stroke="#4da3ff" style="animation-delay:4.60s"/><rect class="gate" x="423.3" y="112" width="68.7" height="91.1" rx="4" fill="#4da3ff" fill-opacity="0.06" stroke="#4da3ff" style="animation-delay:5.75s"/><rect class="gate" x="500.0" y="112" width="68.7" height="91.1" rx="4" fill="#4da3ff" fill-opacity="0.06" stroke="#4da3ff" style="animation-delay:6.90s"/><rect class="gate" x="576.7" y="112" width="68.7" height="91.1" rx="4" fill="#4da3ff" fill-opacity="0.06" stroke="#4da3ff" style="animation-delay:8.05s"/><rect class="gate" x="653.3" y="112" width="68.7" height="91.1" rx="4" fill="#4da3ff" fill-opacity="0.06" stroke="#4da3ff" style="animation-delay:9.20s"/><rect class="gate" x="730.0" y="112" width="68.7" height="91.1" rx="4" fill="#4da3ff" fill-opacity="0.06" stroke="#4da3ff" style="animation-delay:10.35s"/><rect class="gate" x="806.7" y="112" width="68.7" height="91.1" rx="4" fill="#4da3ff" fill-opacity="0.06" stroke="#4da3ff" style="animation-delay:11.50s"/><rect class="gate" x="883.3" y="112" width="68.7" height="91.1" rx="4" fill="#4da3ff" fill-opacity="0.06" stroke="#4da3ff" style="animation-delay:12.65s"/>
@@ -149,7 +149,7 @@
 
 <g class="ft">
   <text class="mono faint" x="40" y="259.1" font-size="12.5">&#9656;</text>
-  <text class="mono dim" x="960" y="285.1" font-size="11" text-anchor="end" letter-spacing="1.4">LONGEST TAKE 21 DAYS &#183; RUNTIME 365 DAYS</text>
+  <text class="mono dim" x="960" y="285.1" font-size="11" text-anchor="end" letter-spacing="1.4">LONGEST TAKE 21 DAYS &#183; RUNTIME 366 DAYS</text>
   <text class="mono faint" x="40" y="285.1" font-size="11" letter-spacing="1.4">EVERY FRAME IS A DAY. EVERY DAY IS A COMMIT OR IT ISN'T.</text>
 </g>
 </svg>
