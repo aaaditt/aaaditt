@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/aaaditt/aaaditt/main/assets/hero.svg?v=d3fe4932" alt="Aadit — design × engineering" width="100%" />
+<img src="https://raw.githubusercontent.com/aaaditt/aaaditt/main/assets/hero.svg?v=5b3d0dbf" alt="Aadit — design × engineering" width="100%" />
 
 <br/>
 
@@ -63,9 +63,9 @@ Currently deep in a cinematic portfolio and a UX certification I keep telling pe
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/aaaditt/aaaditt/main/assets/stats.svg?v=025fe538" alt="GitHub statistics" width="100%" />
+<img src="https://raw.githubusercontent.com/aaaditt/aaaditt/main/assets/stats.svg?v=40b0e507" alt="GitHub statistics" width="100%" />
 
-<img src="https://raw.githubusercontent.com/aaaditt/aaaditt/main/assets/pulse.svg?v=3a577ecd" alt="Commit rhythm and recent activity" width="100%" />
+<img src="https://raw.githubusercontent.com/aaaditt/aaaditt/main/assets/pulse.svg?v=50098a44" alt="Commit rhythm and recent activity" width="100%" />
 
 </div>
 
@@ -75,7 +75,7 @@ Currently deep in a cinematic portfolio and a UX certification I keep telling pe
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/aaaditt/aaaditt/main/assets/reel.svg?v=1ceb3c3d" alt="A year of contributions as a twelve-frame film strip" width="100%" />
+<img src="https://raw.githubusercontent.com/aaaditt/aaaditt/main/assets/reel.svg?v=ebc5fe20" alt="A year of contributions as a twelve-frame film strip" width="100%" />
 
 </div>
 
