@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/aaaditt/aaaditt/main/assets/hero.svg?v=6c3145d5" alt="Aadit — design × engineering" width="100%" />
+<img src="https://raw.githubusercontent.com/aaaditt/aaaditt/main/assets/hero.svg?v=1a38ef5b" alt="Aadit — design × engineering" width="100%" />
 
 <br/>
 
@@ -39,7 +39,7 @@ Currently deep in a cinematic portfolio and a UX certification I keep telling pe
 <td width="50%" valign="top"><a href="https://github.com/aaaditt/3d-editor"><img src="https://raw.githubusercontent.com/aaaditt/aaaditt/main/assets/proj-2.svg?v=04481cfc" width="100%" alt="Jacket Studio — Design flat panels with Photoshop-style tools, watch them wrap onto a rotatable 3D garment, export print-ready artwork." /></a></td>
 </tr>
 <tr>
-<td width="50%" valign="top"><a href="https://github.com/aaaditt/minecraft-schematic-maker"><img src="https://raw.githubusercontent.com/aaaditt/aaaditt/main/assets/proj-3.svg?v=9b9e9e03" width="100%" alt="Blueprint Generator — Turns reference photos into detailed Minecraft builds — 3D preview, block-level editing, Litematica export." /></a></td>
+<td width="50%" valign="top"><a href="https://github.com/aaaditt/minecraft-schematic-maker"><img src="https://raw.githubusercontent.com/aaaditt/aaaditt/main/assets/proj-3.svg?v=4b5e3a96" width="100%" alt="Blueprint Generator — Turns reference photos into detailed Minecraft builds — 3D preview, block-level editing, Litematica export." /></a></td>
 <td width="50%" valign="top"><a href="https://github.com/aaaditt/caspr"><img src="https://raw.githubusercontent.com/aaaditt/aaaditt/main/assets/proj-4.svg?v=5fff2388" width="100%" alt="caspr — Hold a key, speak, release. Polished text lands at your cursor in any Windows app. Local Whisper, so audio never leaves the machine." /></a></td>
 </tr>
 <tr>
@@ -63,9 +63,9 @@ Currently deep in a cinematic portfolio and a UX certification I keep telling pe
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/aaaditt/aaaditt/main/assets/stats.svg?v=c59d3ce0" alt="GitHub statistics" width="100%" />
+<img src="https://raw.githubusercontent.com/aaaditt/aaaditt/main/assets/stats.svg?v=f8184c23" alt="GitHub statistics" width="100%" />
 
-<img src="https://raw.githubusercontent.com/aaaditt/aaaditt/main/assets/pulse.svg?v=4529cf9a" alt="Commit rhythm and recent activity" width="100%" />
+<img src="https://raw.githubusercontent.com/aaaditt/aaaditt/main/assets/pulse.svg?v=9d967a7b" alt="Commit rhythm and recent activity" width="100%" />
 
 </div>
 
@@ -75,7 +75,7 @@ Currently deep in a cinematic portfolio and a UX certification I keep telling pe
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/aaaditt/aaaditt/main/assets/reel.svg?v=5d4a9fc4" alt="A year of contributions as a twelve-frame film strip" width="100%" />
+<img src="https://raw.githubusercontent.com/aaaditt/aaaditt/main/assets/reel.svg?v=a2828c1d" alt="A year of contributions as a twelve-frame film strip" width="100%" />
 
 </div>
 
