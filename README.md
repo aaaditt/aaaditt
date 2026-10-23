@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/aaaditt/aaaditt/main/assets/hero.svg?v=32b31ccb" alt="Aadit — design × engineering" width="100%" />
+<img src="https://raw.githubusercontent.com/aaaditt/aaaditt/main/assets/hero.svg?v=1e681daf" alt="Aadit — design × engineering" width="100%" />
 
 <br/>
 
@@ -63,9 +63,9 @@ Currently deep in a cinematic portfolio and a UX certification I keep telling pe
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/aaaditt/aaaditt/main/assets/stats.svg?v=cd2b6253" alt="GitHub statistics" width="100%" />
+<img src="https://raw.githubusercontent.com/aaaditt/aaaditt/main/assets/stats.svg?v=42d51e3f" alt="GitHub statistics" width="100%" />
 
-<img src="https://raw.githubusercontent.com/aaaditt/aaaditt/main/assets/pulse.svg?v=8ad6e1b2" alt="Commit rhythm and recent activity" width="100%" />
+<img src="https://raw.githubusercontent.com/aaaditt/aaaditt/main/assets/pulse.svg?v=bc380d97" alt="Commit rhythm and recent activity" width="100%" />
 
 </div>
 
